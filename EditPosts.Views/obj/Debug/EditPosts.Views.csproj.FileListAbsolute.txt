@@ -7,6 +7,7 @@ C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.View
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\Castle.Windsor.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EditPosts.Db.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EditPosts.Domain.dll
+C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EditPosts.PresentationServices.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EntityFramework.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\Iesi.Collections.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\Microsoft.Web.Mvc.dll
@@ -16,6 +17,7 @@ C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.View
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\FluentNHibernate.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EditPosts.Db.pdb
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EditPosts.Domain.pdb
+C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EditPosts.PresentationServices.pdb
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\Castle.Core.xml
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\Castle.Windsor.xml
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\bin\EntityFramework.xml

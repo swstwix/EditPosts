@@ -40,8 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Concret\PostPresentationService.cs" />
+    <Compile Include="Services\Concret\TagPresentationService.cs" />
+    <Compile Include="Services\IBasePresentationService.cs" />
+    <Compile Include="Services\IPostPresentationService.cs" />
+    <Compile Include="Services\ITagPresentationService.cs" />
+    <Compile Include="ViewModels\PostsModels\PostIndexModel.cs" />
+    <Compile Include="ViewModels\TagsModels\TagIndexModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EditPosts.Db\EditPosts.Db.csproj">
+      <Project>{F27A341B-7789-4083-8518-C7628142B386}</Project>
+      <Name>EditPosts.Db</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EditPosts.Domain\EditPosts.Domain.csproj">
+      <Project>{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}</Project>
+      <Name>EditPosts.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

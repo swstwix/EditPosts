@@ -4,7 +4,7 @@ using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using EditPosts.Db;
 using EditPosts.Db.Repositories;
-using EditPosts.Db.Repositories.Concret;
+using EditPosts.PresentationServices.Services;
 using NHibernate;
 
 namespace EditPosts.Views.Installers
@@ -15,11 +15,17 @@ namespace EditPosts.Views.Installers
 
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(AllTypes.FromAssemblyNamed("EditPosts.Db").BasedOn(typeof(IRepository)).WithServiceDefaultInterfaces().LifestyleTransient());
+            container.Register(
+                AllTypes.FromAssemblyNamed("EditPosts.Db").BasedOn(typeof (IRepository)).WithServiceDefaultInterfaces().
+                    LifestyleTransient());
 
             container.Register(
                 Classes.FromThisAssembly().BasedOn<IRepository>().Configure(
-                    c => c.DependsOn(container.Resolve<ISession>())));
+                    c => c.DependsOn(container.Resolve<ISession>())).LifestyleTransient());
+
+            container.Register(AllTypes.FromAssemblyNamed("EditPosts.PresentationServices").
+                                   BasedOn(typeof (IBasePresentationService)).WithServiceDefaultInterfaces
+                                   ().LifestyleTransient());
 
             container.Register(Classes.FromThisAssembly().BasedOn<IController>().LifestyleTransient());
 
@@ -33,6 +39,6 @@ namespace EditPosts.Views.Installers
                     LifestylePerWebRequest());
         }
 
-        #endregion IWindsorInstaller Members
+        #endregion
     }
 }

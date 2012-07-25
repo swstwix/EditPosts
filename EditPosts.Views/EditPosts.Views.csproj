@@ -96,7 +96,6 @@
     <Compile Include="Models\PostPreviewViewModel.cs" />
     <Compile Include="Models\PostDetailsViewModel.cs" />
     <Compile Include="Models\TagCloudWithBestPost.cs" />
-    <Compile Include="Models\TagIndexViewModel.cs" />
     <Compile Include="Plumbing\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -1961,6 +1960,10 @@
     <ProjectReference Include="..\EditPosts.Domain\EditPosts.Domain.csproj">
       <Project>{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}</Project>
       <Name>EditPosts.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EditPosts.PresentationServices\EditPosts.PresentationServices.csproj">
+      <Project>{9019F2B5-B897-482D-B442-2A48D23BE3E1}</Project>
+      <Name>EditPosts.PresentationServices</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
