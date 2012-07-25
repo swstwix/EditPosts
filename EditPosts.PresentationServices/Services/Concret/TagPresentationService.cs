@@ -23,7 +23,7 @@ namespace EditPosts.PresentationServices.Services.Concret
                            AllTags = tagRepository.Query().Select(t => new TagCloudItemModel()
                                                                            {
                                                                                Name = t.Name,
-                                                                               Rating = 1
+                                                                               Rating = t.Posts.Where(p => p.Tags.Any(it => it.Id == t.Id)).Sum(p => p.HitCount)
                                                                            })
                        };
         }

@@ -9,9 +9,9 @@
     <div class="leftpanel">
         <h2>
             Latest Post :</h2>
-        <% foreach (Post post in Model.LatestPosts)
+        <% foreach (var post in Model.LatestPosts)
            {%>
-            <% Html.RenderPartial("Preview", new PostPreviewViewModel {Post = post}); %>
+            <% Html.RenderPartial("Preview", post); %>
             <hr />
         <% } %>
         <hr />

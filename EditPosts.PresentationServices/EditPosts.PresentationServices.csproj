@@ -47,8 +47,10 @@
     <Compile Include="Services\IBasePresentationService.cs" />
     <Compile Include="Services\IPostPresentationService.cs" />
     <Compile Include="Services\ITagPresentationService.cs" />
+    <Compile Include="Utils\Extensions\StringExtension.cs" />
     <Compile Include="ViewModels\PostsModels\PostAdminModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostDetailsModel.cs" />
+    <Compile Include="ViewModels\PostsModels\PostPreviewModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostIndexModel.cs" />
     <Compile Include="ViewModels\TagsModels\TagCloudModel.cs" />
     <Compile Include="ViewModels\TagsModels\TagIndexModel.cs" />

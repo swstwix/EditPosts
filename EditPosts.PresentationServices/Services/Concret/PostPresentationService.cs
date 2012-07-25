@@ -1,8 +1,6 @@
-﻿using EditPosts.Db.Repositories;
+﻿using System.Linq;
+using EditPosts.Db.Repositories;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
-using EditPosts.PresentationServices.ViewModels.TagsModels;
-using System.Linq;
-using EditPosts.PresentationServices.ViewModels.TagsModels.TagItem;
 
 namespace EditPosts.PresentationServices.Services.Concret
 {
@@ -10,7 +8,7 @@ namespace EditPosts.PresentationServices.Services.Concret
     {
         private readonly IPostRepository postRepository;
 
-        public PostPresentationService(IPostRepository postRepository)
+        public PostPresentationService(IPostRepository postRepository, ITagRepository tagRepository)
         {
             this.postRepository = postRepository;
         }
@@ -19,19 +17,28 @@ namespace EditPosts.PresentationServices.Services.Concret
 
         public PostIndexModel LoadPostIndexModel()
         {
-            return new PostIndexModel {LatestPosts = postRepository.LatestPosts};
+            return new PostIndexModel
+                       {
+                           LatestPosts = postRepository.LatestPosts
+                               .Select(p => new PostPreviewModel
+                                                {
+                                                    Body = p.Body,
+                                                    PostId = p.Id,
+                                                    Name = p.Name
+                                                })
+                       };
         }
 
         public PostDetailsModel LoadPostDetailsViewModel(int id)
         {
-            return new PostDetailsModel {Post = postRepository.Get(id)};
+            return new PostDetailsModel { Post = postRepository.Get(id) };
         }
 
         public PostAdminModel LoadPostAdminModel()
         {
-            return new PostAdminModel(){Posts = postRepository.Query()};
+            return new PostAdminModel { Posts = postRepository.Query() };
         }
 
-        #endregion
+        #endregion IPostPresentationService Members
     }
 }

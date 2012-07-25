@@ -5,6 +5,6 @@ namespace EditPosts.PresentationServices.ViewModels.PostsModels
 {
     public class PostIndexModel
     {
-        public IEnumerable<Post> LatestPosts { get; set; }
+        public IEnumerable<PostPreviewModel> LatestPosts { get; set; }
     }
 }
