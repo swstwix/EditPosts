@@ -18,17 +18,17 @@
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Shared/f:MainContent.Master" caret="732" fromTop="12" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:Index.aspx" caret="359" fromTop="6" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IRepository.cs" caret="153" fromTop="7" />
-    <File id="2B990EF7-8A4B-4CF3-AA10-BE2D88A3436D/f:DomainServiceInstaller.cs" caret="0" fromTop="0" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Scripts/d:Tagit/d:js/f:tagit.js" caret="10037" fromTop="20" />
-    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="363" fromTop="13" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Plumbing/f:WindsorControllerFactory.cs" caret="963" fromTop="19" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IEntityRepository.cs" caret="117" fromTop="4" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="530" fromTop="18" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="363" fromTop="13" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/d:Concret/f:TagRepository.cs" caret="0" fromTop="0" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/d:Concret/f:PostRepository.cs" caret="0" fromTop="0" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/d:Concret/f:EntityRepository.cs" caret="0" fromTop="0" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IPostRepository.cs" caret="164" fromTop="5" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:ITagRepository.cs" caret="54" fromTop="2" />
-    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Plumbing/f:WindsorControllerFactory.cs" caret="963" fromTop="19" />
-    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="530" fromTop="18" />
+    <File id="1A6563B7-E59B-4D7F-AFEA-D68416A93544/f:DomainServiceInstaller.cs" caret="0" fromTop="0" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="2716" fromTop="81" />
   </RecentFiles>
   <RecentEdits>

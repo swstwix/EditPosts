@@ -2,4 +2,5 @@
   <Module PersistentId="C5D6393A-56B8-499E-B390-C73B0A823D6E" ModuleId="EditPosts.Views" />
   <Module PersistentId="EBC6998D-CDC3-421F-AD02-14D4424CBAF6" ModuleId="EditPosts.Domain" />
   <Module PersistentId="F27A341B-7789-4083-8518-C7628142B386" ModuleId="EditPosts.Db" />
+  <Module PersistentId="9019F2B5-B897-482D-B442-2A48D23BE3E1" ModuleId="EditPosts.PresentationServices" />
 </Modules>
