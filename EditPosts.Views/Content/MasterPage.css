@@ -1,33 +1,52 @@
-﻿body {
+﻿body
+{
     margin-left: auto;
     margin-right: auto;
 }
 /* menu style */
 
-#menu {
+#menu
+{
     background-color: Black;
     padding: 5px 0px 5px 0px;
 }
 
-#menu a { text-decoration: none; }
+#menu a
+{
+    text-decoration: none;
+}
 
-#menu li {
+#menu li
+{
     display: inline;
     font-size: large;
     padding: 0px 20px 0px 10px;
     text-decoration: none;
 }
 
-#menu a:link { color: Gray; }
+#menu a:link
+{
+    color: Gray;
+}
 
-#menu a:visited { color: Gray; }
+#menu a:visited
+{
+    color: Gray;
+}
 
-#menu a:active { color: Gray; }
+#menu a:active
+{
+    color: Gray;
+}
 
-#menu a:hover { color: White; }
+#menu a:hover
+{
+    color: White;
+}
 /* content style */
 
-#content {
+#content
+{
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
@@ -37,37 +56,54 @@
 /* Styles for validation helpers
 -----------------------------------------------------------*/
 
-.field-validation-error { color: #ff0000; }
+.field-validation-error
+{
+    color: #ff0000;
+}
 
-.field-validation-valid { display: none; }
+.field-validation-valid
+{
+    display: none;
+}
 
-.input-validation-error {
+.input-validation-error
+{
     background-color: #ffeeee;
     border: 1px solid #ff0000;
 }
 
-.validation-summary-errors {
+.validation-summary-errors
+{
     color: #ff0000;
     font-weight: bold;
 }
 
-.validation-summary-valid { display: none; }
+.validation-summary-valid
+{
+    display: none;
+}
 
-.leftpanel {
+.leftpanel
+{
     display: block;
     float: left;
     width: 50%;
 }
 
-.leftpanel fieldset { width: 100%; }
+.leftpanel fieldset
+{
+    width: 100%;
+}
 
-.rightpanel {
+.rightpanel
+{
     display: block;
     float: right;
     width: 40%;
 }
 
-.preview_text {
+.preview_text
+{
     border-left: 1px;
     border-left-style: dashed;
     margin-left: 30px;
@@ -78,7 +114,8 @@
     formatting post date table
 */
 
-.post_table table {
+.post_table table
+{
     float: right;
     width: 100%;
 }
@@ -87,7 +124,8 @@
 
 */
 
-.button {
+.button
+{
     -moz-border-radius: 6px;
     -moz-box-shadow: inset 0px 1px 0px 0px #ffffff;
     -webkit-border-radius: 6px;
@@ -109,14 +147,16 @@
     text-shadow: 1px 1px 0px #ffffff;
 }
 
-.button:hover {
+.button:hover
+{
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #dfdfdf), color-stop(1, #ededed));
     background: -moz-linear-gradient(center top, #dfdfdf 5%, #ededed 100%);
     background-color: #dfdfdf;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
 }
 
-.button:active {
+.button:active
+{
     position: relative;
     top: 1px;
 }

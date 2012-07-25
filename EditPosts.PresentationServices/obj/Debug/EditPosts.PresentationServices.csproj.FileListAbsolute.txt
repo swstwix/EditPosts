@@ -1,4 +1,3 @@
-C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\bin\Debug\Tag.hbm.xml
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.PresentationServices.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.PresentationServices.pdb
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.Db.dll

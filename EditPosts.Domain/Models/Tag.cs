@@ -10,10 +10,5 @@ namespace EditPosts.Domain.Models
         public virtual string Name { get; set; }
 
         public virtual ICollection<Post> Posts { get; set; }
-
-        public virtual int Rating
-        {
-            get { return Posts.Sum(x => x.HitCount); }
-        }
     }
 }

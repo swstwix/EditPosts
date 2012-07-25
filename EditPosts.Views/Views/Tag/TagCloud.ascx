@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.MixedModels.TagCloudWithBestPostsModel>" %>
+﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<EditPosts.PresentationServices.ViewModels.TagsModels.TagCloudModel>" %>
+
 <%@ Import Namespace="EditPosts.Domain.Models" %>
 <%@ Import Namespace="EditPosts.Views.Models" %>
 <div id="xlistwarp">
@@ -10,9 +11,9 @@
                 Tag with hit rating :</h4>
         </legend>
         <ul id="xlist">
-            <% foreach (Tag tag in Model.AllTags)
+            <% foreach (var tag in Model.AllTags)
                { %>
-                <li value="<%= tag.Posts.Count %>">
+                <li value="<%= tag.Rating %>">
                     <%= Html.ActionLink(string.Format("{0}({1})", tag.Name, tag.Rating), "Index", "Tag",
                                         new {name = tag.Name}, new {}) %>
                 </li>
@@ -21,13 +22,6 @@
         </ul>
     </fieldset>
 </div>
-<hr />
-<h2>
-    Popular posts :</h2>
-<% foreach (Post post in Model.BestPosts)
-   {%>
-    <% Html.RenderPartial("Preview", new PostPreviewViewModel {Post = post}); %>
-<% } %>
 <script src='<%= Url.Content(@"../../Scripts/jquery-1.5.1.min.js") %>' type="text/javascript"> </script>
 <script src='<%= Url.Content(@"../../Scripts/jquery.tinysort.min.js") %>' type="text/javascript"> </script>
 <script src='<%= Url.Content(@"../../Scripts/jquery.tagcloud.min.js") %>' type="text/javascript"> </script>

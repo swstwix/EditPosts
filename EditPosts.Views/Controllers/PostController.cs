@@ -33,12 +33,10 @@ namespace EditPosts.Views.Controllers
         //У администратора должна быть страничка, на которой виден список всех созданных постов, кнопки Add, Edit, Delete.
         public ActionResult Admin(int? page)
         {
-            var viewModel = new PostAdminViewModel
-                                {CurrentPage = page ?? 1, PostsPerPage = 30, Posts = postRepository.Query()};
-            return View(viewModel);
+            return View(postPresentationService.LoadPostAdminModel());
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Create()
         {
             return RedirectToAction("Edit", new {id = default(int)});
@@ -139,12 +137,6 @@ namespace EditPosts.Views.Controllers
         public ActionResult Index()
         {
             return View(postPresentationService.LoadPostIndexModel());
-        }
-
-        [HttpGet]
-        public ActionResult TagsAndPopularPosts()
-        {
-            return View(postPresentationService.LoadTagCloudWithBestPostsModel());
         }
 
         /**

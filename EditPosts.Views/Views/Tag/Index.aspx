@@ -23,13 +23,6 @@
         <% } %>
     </div>
     <div class="rightpanel">
-        <%= Html.Action("TagsAndPopularPosts", "Post") %>
+        <%= Html.Action("TagCloud", "Tag") %>
     </div>
-    <script src='<%= Url.Content(@"~/Scripts/jquery-1.5.1.min.js") %>' type="text/javascript"> </script>
-    <script src='<%= Url.Content(@"~/Scripts/jquery.tinysort.min.js") %>' type="text/javascript"> </script>
-    <script src="../../Scripts/jquery.tagcloud.min.js" type="text/javascript"> </script>
-    <script>
-        //$("#xlist>li").tsort({ order: "rand" });
-        $("#xlist").tagcloud({ colormin: "d88", colormax: "d08", type: "list", sizemin: 20, sizemax: 40 });
-    </script>
 </asp:Content>

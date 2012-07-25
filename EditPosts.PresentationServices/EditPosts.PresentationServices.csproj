@@ -47,10 +47,12 @@
     <Compile Include="Services\IBasePresentationService.cs" />
     <Compile Include="Services\IPostPresentationService.cs" />
     <Compile Include="Services\ITagPresentationService.cs" />
-    <Compile Include="ViewModels\MixedModels\TagCloudWithBestPostsModel.cs" />
-    <Compile Include="ViewModels\PostsModels\PostDetailsViewModel.cs" />
+    <Compile Include="ViewModels\PostsModels\PostAdminModel.cs" />
+    <Compile Include="ViewModels\PostsModels\PostDetailsModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostIndexModel.cs" />
+    <Compile Include="ViewModels\TagsModels\TagCloudModel.cs" />
     <Compile Include="ViewModels\TagsModels\TagIndexModel.cs" />
+    <Compile Include="ViewModels\TagsModels\TagItem\TagCloudItemModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EditPosts.Db\EditPosts.Db.csproj">
@@ -61,6 +63,9 @@
       <Project>{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}</Project>
       <Name>EditPosts.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ViewModels\MixedModels\Items\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

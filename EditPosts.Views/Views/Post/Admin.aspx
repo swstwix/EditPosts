@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
-         Inherits="System.Web.Mvc.ViewPage<EditPosts.Views.Models.PostAdminViewModel>" %>
+    Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostAdminModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Admin
@@ -8,10 +8,7 @@
     <div class="post_table">
         <table>
             <caption>
-                Posts from
-                <%= Model.BeginIndex() %>
-                to
-                <%= Model.EndIndex() %></caption>
+                All Posts</caption>
             <thead>
                 <th>
                     Name :
@@ -26,43 +23,34 @@
                 </th>
             </thead>
             <tbody>
-                <% for (int i = Model.BeginIndex(); i < Model.EndIndex(); i++)
+                <% foreach (var post in Model.Posts)
                    {%>
-                    <tr>
-                        <td>
-                            <div class="table_postname">
-                                <%= Model.Posts.ElementAt(i).Name %>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="table_postdate">
-                                <%= Model.Posts.ElementAt(i).PostDate %>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="table_postcount">
-                                <%= Model.Posts.ElementAt(i).HitCount %>
-                            </div>
-                        </td>
-                        <td>
-                            <span>
-                                <% using (Html.BeginForm("Delete", "Post", new {id = Model.Posts.ElementAt(i).Id, page = Model.CurrentPage}))
-                                   { %>
-                                    <%= Html.ActionLink("View", "Details", "Post", new {id = Model.Posts.ElementAt(i).Id},
+                <tr>
+                    <td>
+                        <%= post.Name %>
+                    </td>
+                    <td>
+                        <%= post.PostDate%>
+                    </td>
+                    <td>
+                        <%= post.HitCount %>
+                    </td>
+                    <td>
+                        <span>
+                            <% using (Html.BeginForm("Delete", "Post", new { id = post.Id}))
+                               { %>
+                            <%= Html.ActionLink("View", "Details", "Post", new {id = post.Id},
                                         new {@class = "button"}) %>
-                                    <%= Html.ActionLink("Edit", "Edit", "Post",
-                                        new {id = Model.Posts.ElementAt(i).Id},
+                            <%= Html.ActionLink("Edit", "Edit", "Post",
+                                        new {id = post.Id},
                                         new {@class = "button"}) %>
-                                    <input type="submit" value="Delete" class="button" />
-                                <% } %></span>
-                        </td>
-                    </tr>
+                            <input type="submit" value="Delete" class="button" />
+                            <% } %></span>
+                    </td>
+                </tr>
                 <% } %>
             </tbody>
         </table>
-        <% using (Html.BeginForm("Create", "Post"))
-           {%>
-            <input type="submit" value="Add new post" class="button" />
-        <% } %>
+        <%= Html.ActionLink("Create", "Create", "Post", new {@class = "button"}) %>
     </div>
 </asp:Content>

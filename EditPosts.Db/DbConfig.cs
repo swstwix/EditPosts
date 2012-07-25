@@ -20,8 +20,7 @@ namespace EditPosts.Db
                             MsSqlConfiguration.MsSql2008.ConnectionString(
                                 "Data Source=WD-SERVER-5;User ID=TestData;Password=TestData")).Mappings(
                                     m => m.FluentMappings.AddFromAssemblyOf<PostMap>()).
-                            BuildConfiguration().AddXmlFile(
-                                @"C:\Users\f.demesh\documents\visual studio 2010\Projects\EditPosts\EditPosts.Db\Tag.hbm.xml");
+                            BuildConfiguration();
                 if (_config == null)
                     throw new InvalidOperationException("NHibernate configuration is null");
                 return _config;

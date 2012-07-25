@@ -8,40 +8,40 @@ namespace EditPosts.Views.Models
 {
     public class PostPreviewViewModel
     {
-        private Post _post;
-        private string _previewText;
+        private Post post;
+        private string previewText;
 
         public Post Post
         {
-            get { return _post; }
+            get { return post; }
             set
             {
-                _post = value;
-                if (_post.Body == null)
+                post = value;
+                if (post.Body == null)
                 {
-                    _previewText = String.Empty;
+                    previewText = String.Empty;
                     return;
                 }
 
-                _previewText = new HtmlToText().Convert(_post.Body);
+                previewText = new HtmlToText().Convert(post.Body);
 
-                if (_previewText.Length > 300)
-                    _previewText = _previewText.Substring(0, 300);
+                if (previewText.Length > 300)
+                    previewText = previewText.Substring(0, 300);
             }
         }
 
         public string PreviewText
         {
-            get { return _previewText; }
+            get { return previewText; }
         }
     }
 
     internal class HtmlToText
     {
+        protected static HashSet<string> IgnoreTags;
+
         // Static data tables
         protected static Dictionary<string, string> Tags;
-
-        protected static HashSet<string> IgnoreTags;
 
         // Instance variables
         protected string Html;
@@ -163,6 +163,72 @@ namespace EditPosts.Views.Models
             return HttpUtility.HtmlDecode(Text.ToString());
         }
 
+        // Consumes inner content from the current tag
+        protected void EatInnerContent(string tag)
+        {
+            string endTag = "/" + tag;
+
+            while (!EndOfText)
+            {
+                if (Peek() == '<')
+                {
+                    // Consume a tag
+                    bool selfClosing;
+                    if (ParseTag(out selfClosing) == endTag)
+                        return;
+                    // Use recursion to consume nested tags
+                    if (!selfClosing && !tag.StartsWith("/"))
+                        EatInnerContent(tag);
+                }
+                else MoveAhead();
+            }
+        }
+
+        // Moves the current position past a quoted value
+        protected void EatQuotedValue()
+        {
+            char c = Peek();
+            if (c == '"' || c == '\'')
+            {
+                // Opening quote
+                MoveAhead();
+                // Find end of value
+                Pos = Html.IndexOfAny(new[] {c, '\r', '\n'}, Pos);
+                if (Pos < 0)
+                    Pos = Html.Length;
+                else
+                    MoveAhead(); // Closing quote
+            }
+        }
+
+        // Moves the current position to the next non-whitespace
+        // character.
+        protected void EatWhitespace()
+        {
+            while (Char.IsWhiteSpace(Peek()))
+                MoveAhead();
+        }
+
+        // Moves the current position to the next non-whitespace
+        // character or the start of the next line, whichever
+        // comes first
+        protected void EatWhitespaceToNextLine()
+        {
+            while (Char.IsWhiteSpace(Peek()))
+            {
+                char c = Peek();
+                MoveAhead();
+                if (c == '\n')
+                    break;
+            }
+        }
+
+        // Safely advances to current position to the next character
+        protected void MoveAhead()
+        {
+            Pos = Math.Min(Pos + 1, Html.Length);
+        }
+
         // Eats all characters that are part of the current tag
         // and returns information about that tag
         protected string ParseTag(out bool selfClosing)
@@ -201,27 +267,6 @@ namespace EditPosts.Views.Models
             return tag;
         }
 
-        // Consumes inner content from the current tag
-        protected void EatInnerContent(string tag)
-        {
-            string endTag = "/" + tag;
-
-            while (!EndOfText)
-            {
-                if (Peek() == '<')
-                {
-                    // Consume a tag
-                    bool selfClosing;
-                    if (ParseTag(out selfClosing) == endTag)
-                        return;
-                    // Use recursion to consume nested tags
-                    if (!selfClosing && !tag.StartsWith("/"))
-                        EatInnerContent(tag);
-                }
-                else MoveAhead();
-            }
-        }
-
         // Returns true if the current position is at the end of
         // the string
 
@@ -229,51 +274,6 @@ namespace EditPosts.Views.Models
         protected char Peek()
         {
             return (Pos < Html.Length) ? Html[Pos] : (char) 0;
-        }
-
-        // Safely advances to current position to the next character
-        protected void MoveAhead()
-        {
-            Pos = Math.Min(Pos + 1, Html.Length);
-        }
-
-        // Moves the current position to the next non-whitespace
-        // character.
-        protected void EatWhitespace()
-        {
-            while (Char.IsWhiteSpace(Peek()))
-                MoveAhead();
-        }
-
-        // Moves the current position to the next non-whitespace
-        // character or the start of the next line, whichever
-        // comes first
-        protected void EatWhitespaceToNextLine()
-        {
-            while (Char.IsWhiteSpace(Peek()))
-            {
-                char c = Peek();
-                MoveAhead();
-                if (c == '\n')
-                    break;
-            }
-        }
-
-        // Moves the current position past a quoted value
-        protected void EatQuotedValue()
-        {
-            char c = Peek();
-            if (c == '"' || c == '\'')
-            {
-                // Opening quote
-                MoveAhead();
-                // Find end of value
-                Pos = Html.IndexOfAny(new[] {c, '\r', '\n'}, Pos);
-                if (Pos < 0)
-                    Pos = Html.Length;
-                else
-                    MoveAhead(); // Closing quote
-            }
         }
 
         #region Nested type: TextBuilder
@@ -327,6 +327,16 @@ namespace EditPosts.Views.Models
                 _text.Length = 0;
                 _currLine.Length = 0;
                 _emptyLines = 0;
+            }
+
+            /// <summary>
+            /// Returns the current output as a string.
+            /// </summary>
+            public override string ToString()
+            {
+                if (_currLine.Length > 0)
+                    FlushCurrLine();
+                return _text.ToString();
             }
 
             /// <summary>
@@ -401,16 +411,6 @@ namespace EditPosts.Views.Models
 
                 // Reset current line
                 _currLine.Length = 0;
-            }
-
-            /// <summary>
-            /// Returns the current output as a string.
-            /// </summary>
-            public override string ToString()
-            {
-                if (_currLine.Length > 0)
-                    FlushCurrLine();
-                return _text.ToString();
             }
         }
 

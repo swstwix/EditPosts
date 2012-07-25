@@ -16,5 +16,10 @@ namespace EditPosts.Views.Controllers
         {
             return View(tagPresentationService.LoadTagIndexModel(name));
         }
+
+        public ActionResult TagCloud()
+        {
+            return View(tagPresentationService.LoadTagCloudModel());
+        }
     }
 }

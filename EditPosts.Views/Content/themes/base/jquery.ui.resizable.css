@@ -12,18 +12,26 @@
  *
  * http://docs.jquery.com/UI/Resizable#theming
  */
-.ui-resizable { position: relative; }
+.ui-resizable
+{
+    position: relative;
+}
 
-.ui-resizable-handle {
+.ui-resizable-handle
+{
     display: block;
     font-size: 0.1px;
     position: absolute;
     z-index: 99999;
 }
 
-.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle { display: none; }
+.ui-resizable-disabled .ui-resizable-handle, .ui-resizable-autohide .ui-resizable-handle
+{
+    display: none;
+}
 
-.ui-resizable-n {
+.ui-resizable-n
+{
     cursor: n-resize;
     height: 7px;
     left: 0;
@@ -31,7 +39,8 @@
     width: 100%;
 }
 
-.ui-resizable-s {
+.ui-resizable-s
+{
     bottom: -5px;
     cursor: s-resize;
     height: 7px;
@@ -39,7 +48,8 @@
     width: 100%;
 }
 
-.ui-resizable-e {
+.ui-resizable-e
+{
     cursor: e-resize;
     height: 100%;
     right: -5px;
@@ -47,7 +57,8 @@
     width: 7px;
 }
 
-.ui-resizable-w {
+.ui-resizable-w
+{
     cursor: w-resize;
     height: 100%;
     left: -5px;
@@ -55,7 +66,8 @@
     width: 7px;
 }
 
-.ui-resizable-se {
+.ui-resizable-se
+{
     bottom: 1px;
     cursor: se-resize;
     height: 12px;
@@ -63,7 +75,8 @@
     width: 12px;
 }
 
-.ui-resizable-sw {
+.ui-resizable-sw
+{
     bottom: -5px;
     cursor: sw-resize;
     height: 9px;
@@ -71,7 +84,8 @@
     width: 9px;
 }
 
-.ui-resizable-nw {
+.ui-resizable-nw
+{
     cursor: nw-resize;
     height: 9px;
     left: -5px;
@@ -79,7 +93,8 @@
     width: 9px;
 }
 
-.ui-resizable-ne {
+.ui-resizable-ne
+{
     cursor: ne-resize;
     height: 9px;
     right: -5px;

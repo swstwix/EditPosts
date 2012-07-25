@@ -7,7 +7,7 @@ using EditPosts.Views.Plumbing;
 
 namespace EditPosts.Views
 {
-    // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
+    // Note: For instructions on enabling IIS6 or IIS7 classic mode,
     // visit http://go.microsoft.com/?LinkId=9394801
 
     public class MvcApplication : HttpApplication
@@ -26,7 +26,7 @@ namespace EditPosts.Views
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new {controller = "Post", action = "Index", id = UrlParameter.Optional} // Parameter defaults
+                new { controller = "Post", action = "Index", id = UrlParameter.Optional } // Parameter defaults
                 );
         }
 

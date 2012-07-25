@@ -1,5 +1,5 @@
-﻿using EditPosts.PresentationServices.ViewModels.MixedModels;
-using EditPosts.PresentationServices.ViewModels.PostsModels;
+﻿using EditPosts.PresentationServices.ViewModels.PostsModels;
+using EditPosts.PresentationServices.ViewModels.TagsModels;
 
 namespace EditPosts.PresentationServices.Services
 {
@@ -7,8 +7,8 @@ namespace EditPosts.PresentationServices.Services
     {
         PostIndexModel LoadPostIndexModel();
 
-        TagCloudWithBestPostsModel LoadTagCloudWithBestPostsModel();
+        PostDetailsModel LoadPostDetailsViewModel(int id);
 
-        PostDetailsViewModel LoadPostDetailsViewModel(int id);
+        PostAdminModel LoadPostAdminModel();
     }
 }

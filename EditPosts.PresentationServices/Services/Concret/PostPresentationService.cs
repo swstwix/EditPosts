@@ -1,7 +1,8 @@
-﻿using System;
-using EditPosts.Db.Repositories;
-using EditPosts.PresentationServices.ViewModels.MixedModels;
+﻿using EditPosts.Db.Repositories;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
+using EditPosts.PresentationServices.ViewModels.TagsModels;
+using System.Linq;
+using EditPosts.PresentationServices.ViewModels.TagsModels.TagItem;
 
 namespace EditPosts.PresentationServices.Services.Concret
 {
@@ -23,15 +24,14 @@ namespace EditPosts.PresentationServices.Services.Concret
             return new PostIndexModel {LatestPosts = postRepository.LatestPosts};
         }
 
-        public TagCloudWithBestPostsModel LoadTagCloudWithBestPostsModel()
+        public PostDetailsModel LoadPostDetailsViewModel(int id)
         {
-            return new TagCloudWithBestPostsModel
-                       {AllTags = tagRepository.Query(), BestPosts = postRepository.MostPopularPosts};
+            return new PostDetailsModel {Post = postRepository.Get(id)};
         }
 
-        public PostDetailsViewModel LoadPostDetailsViewModel(int id)
+        public PostAdminModel LoadPostAdminModel()
         {
-            return new PostDetailsViewModel() {Post = postRepository.Get(id)};
+            return new PostAdminModel(){Posts = postRepository.Query()};
         }
 
         #endregion

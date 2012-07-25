@@ -16,6 +16,6 @@
         <hr />
     </div>
     <div class="rightpanel">
-        <%= Html.Action("TagsAndPopularPosts", "Post") %>
+        <%= Html.Action("TagCloud", "Tag") %>
     </div>
 </asp:Content>
