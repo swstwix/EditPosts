@@ -1,0 +1,64 @@
+ul.tagit.ui-widget {
+    list-style-type: none;
+    overflow: auto;
+    padding: 1px 5px;
+}
+
+ul.tagit.ui-widget li.tagit-choice {
+    display: block;
+    float: left;
+    line-height: inherit;
+    margin: 2px 5px 2px 0;
+    padding: .2em 11px .2em .5em;
+    position: relative;
+}
+
+ul.tagit.ui-widget li.tagit-new {
+    display: block;
+    float: left;
+    line-height: inherit;
+    margin: 2px 5px 2px 0;
+    padding: .2em 0;
+    position: relative;
+}
+
+ul.tagit.ui-widget li.tagit-choice.ui-state-error { border-radius: 0; }
+
+ul.tagit.ui-widget li.tagit-choice a.tagit-close {
+    cursor: pointer;
+    margin-top: -8px;
+    position: absolute;
+    right: 2px;
+    top: 50%;
+}
+
+ul.tagit.ui-widget li.tagit-new input[type="text"].tagit-input,
+ul.tagit.ui-widget li.tagit-new input[type="text"].tagit-input:active,
+ul.tagit.ui-widget li.tagit-new input[type="text"].tagit-input:hover,
+ul.tagit.ui-widget li.tagit-new input[type="text"].tagit-input:focus {
+    background-color: inherit;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+    display: block;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    width: inherit;
+}
+
+ul.ui-autocomplete.custom-ac { width: 760px; }
+
+ul.ui-autocomplete li.ui-menu-item.ac-item {
+    clear: none;
+    float: left;
+    width: 253px;
+}
+
+ul.ui-autocomplete li.ui-menu-item.ac-item div.ui-widget-content {
+    font-size: 85%;
+    height: 80px;
+    overflow: auto;
+    padding: 3px;
+}

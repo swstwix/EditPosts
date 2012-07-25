@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Domain", "EditPosts.Domain\EditPosts.Domain.csproj", "{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Views", "EditPosts.Views\EditPosts.Views.csproj", "{C5D6393A-56B8-499E-B390-C73B0A823D6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Db", "EditPosts.Db\EditPosts.Db.csproj", "{F27A341B-7789-4083-8518-C7628142B386}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F27A341B-7789-4083-8518-C7628142B386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F27A341B-7789-4083-8518-C7628142B386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F27A341B-7789-4083-8518-C7628142B386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F27A341B-7789-4083-8518-C7628142B386}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

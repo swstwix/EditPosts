@@ -1,0 +1,59 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/d:Properties/f:AssemblyInfo.cs" caret="0" fromTop="0" />
+    <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/f:Tag.cs" caret="115" fromTop="6" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:Admin.aspx" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:Details.aspx" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:TagsAndPopularPosts.aspx" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:ViewPost.aspx" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Shared/f:Preview.ascx" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Tag/f:Index.aspx" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/f:Web.config" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:PostAdminViewModel.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:PostDetailsViewModel.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:PostIndexViewModel.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:PostPreviewViewModel.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:TagCloudWithBestPost.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:TagIndexViewModel.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Shared/f:MainContent.Master" caret="732" fromTop="12" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:Index.aspx" caret="359" fromTop="6" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IRepository.cs" caret="153" fromTop="7" />
+    <File id="2B990EF7-8A4B-4CF3-AA10-BE2D88A3436D/f:DomainServiceInstaller.cs" caret="0" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Scripts/d:Tagit/d:js/f:tagit.js" caret="10037" fromTop="20" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="363" fromTop="13" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IEntityRepository.cs" caret="117" fromTop="4" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/d:Concret/f:TagRepository.cs" caret="0" fromTop="0" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/d:Concret/f:PostRepository.cs" caret="0" fromTop="0" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/d:Concret/f:EntityRepository.cs" caret="0" fromTop="0" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IPostRepository.cs" caret="164" fromTop="5" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:ITagRepository.cs" caret="54" fromTop="2" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Plumbing/f:WindsorControllerFactory.cs" caret="963" fromTop="19" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="530" fromTop="18" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="2716" fromTop="81" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Models/f:PostDetailsViewModel.cs" caret="1080" fromTop="36" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="3766" fromTop="14" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="5454" fromTop="25" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Mappings/f:TagMap.cs" caret="353" fromTop="12" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Mappings/f:PostMap.cs" caret="505" fromTop="16" />
+    <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/f:Post.cs" caret="390" fromTop="17" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="42" fromTop="2" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="516" fromTop="4" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="110" fromTop="5" />
+    <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/f:Tag.cs" caret="401" fromTop="18" />
+    <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/f:Tag.cs" caret="70" fromTop="6" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="345" fromTop="12" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Shared/f:MainContent.Master" caret="716" fromTop="12" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="393" fromTop="14" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IPostRepository.cs" caret="163" fromTop="5" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:ITagRepository.cs" caret="126" fromTop="4" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:ITagRepository.cs" caret="3052" fromTop="2" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:PostController.cs" caret="677" fromTop="11" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="335" fromTop="13" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IRepository.cs" caret="153" fromTop="7" />
+    <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:IEntityRepository.cs" caret="117" fromTop="4" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="859" fromTop="20" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="651" fromTop="18" />
+  </RecentEdits>
+</RecentFiles>

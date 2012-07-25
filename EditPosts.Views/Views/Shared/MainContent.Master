@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>
+        <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
+    </title>
+    <link type="text/css" rel="Stylesheet" href="<%= Url.Content("~/Content/MasterPage.css") %>" />
+    <script src="<%= Url.Content("~/Scripts/MicrosoftAjax.debug.js") %>" type="text/javascript"> </script>
+    <script src="<%= Url.Content("~/Scripts/MicrosoftMvcAjax.debug.js") %>" type="text/javascript"> </script>
+    <script src="<%= Url.Content("~/Scripts/MicrosoftMvcValidation.debug.js") %>" type="text/javascript"> </script>    
+    <script src="<%= Url.Content("~/Scripts/jquery-1.5.1.js") %>"></script>
+    <script src="<%= Url.Content("~/Scripts/jquery.validate.min.js") %>" type="text/javascript"> </script>
+    <script src="<%= Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js") %>"
+        type="text/javascript"> </script>
+    <% Html.EnableClientValidation(true);%>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li>
+                <%= Html.ActionLink("Main page", "Index", "Post") %></li>
+            <li>
+                <%= Html.ActionLink("Admin page", "Admin", "Post") %></li>
+        </ul>
+    </div>
+    <div id="content">
+        <asp:ContentPlaceHolder ID="MainContent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>
