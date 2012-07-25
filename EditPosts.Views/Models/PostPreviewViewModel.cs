@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
-using EditPosts.Domain;
+using EditPosts.Domain.Models;
 
 namespace EditPosts.Views.Models
 {

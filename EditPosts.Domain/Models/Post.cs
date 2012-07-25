@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace EditPosts.Domain
+namespace EditPosts.Domain.Models
 {
     public class Post
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using EditPosts.Db.Repositories;
 using EditPosts.Db.Repositories.Concret;
-using EditPosts.Domain;
+using EditPosts.Domain.Models;
 using EditPosts.Views.Models;
 using Iesi.Collections.Generic;
 

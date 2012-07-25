@@ -2,6 +2,7 @@
     Inherits="System.Web.Mvc.ViewPage<EditPosts.Views.Models.TagIndexViewModel>" %>
 
 <%@ Import Namespace="EditPosts.Domain" %>
+<%@ Import Namespace="EditPosts.Domain.Models" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     <%= Model.Tag.Name %>
 </asp:Content>

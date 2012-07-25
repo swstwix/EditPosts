@@ -5,7 +5,6 @@ using Castle.Windsor;
 using EditPosts.Db;
 using EditPosts.Db.Repositories;
 using EditPosts.Db.Repositories.Concret;
-using EditPosts.Domain;
 using NHibernate;
 
 namespace EditPosts.Views.Installers

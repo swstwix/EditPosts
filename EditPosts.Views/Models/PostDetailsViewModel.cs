@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
-using EditPosts.Domain;
+using EditPosts.Domain.Models;
 
 namespace EditPosts.Views.Models
 {

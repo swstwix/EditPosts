@@ -1,5 +1,5 @@
 using System;
-using EditPosts.Domain;
+using EditPosts.Domain.Models;
 using FluentNHibernate.Mapping;
 
 namespace EditPosts.Db.Mappings

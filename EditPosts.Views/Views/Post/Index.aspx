@@ -2,6 +2,7 @@
     Inherits="System.Web.Mvc.ViewPage<EditPosts.Views.Models.PostIndexViewModel>" %>
 
 <%@ Import Namespace="EditPosts.Domain" %>
+<%@ Import Namespace="EditPosts.Domain.Models" %>
 <%@ Import Namespace="EditPosts.Views.Models" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Main Page

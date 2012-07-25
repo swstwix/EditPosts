@@ -1,6 +1,7 @@
 ﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<EditPosts.Views.Models.TagCloudWithBestPost>" %>
 
 <%@ Import Namespace="EditPosts.Domain" %>
+<%@ Import Namespace="EditPosts.Domain.Models" %>
 <%@ Import Namespace="EditPosts.Views.Models" %>
 <div id="xlistwarp">
     <h2>

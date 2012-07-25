@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace EditPosts.Domain
+namespace EditPosts.Domain.Models
 {
     public class Tag
     {

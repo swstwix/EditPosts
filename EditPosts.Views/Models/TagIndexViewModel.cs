@@ -1,4 +1,4 @@
-﻿using EditPosts.Domain;
+﻿using EditPosts.Domain.Models;
 
 namespace EditPosts.Views.Models
 {

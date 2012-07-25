@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using EditPosts.Domain;
+using EditPosts.Domain.Models;
 
 namespace EditPosts.Db.Repositories
 {

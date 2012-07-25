@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Text;
-using EditPosts.Domain;
+using EditPosts.Domain.Models;
 using NHibernate;
 
 namespace EditPosts.Db.Repositories.Concret
