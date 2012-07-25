@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
-    Inherits="System.Web.Mvc.ViewPage<EditPosts.Views.Models.PostIndexViewModel>" %>
+    Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostIndexModel>" %>
 
 <%@ Import Namespace="EditPosts.Domain" %>
 <%@ Import Namespace="EditPosts.Domain.Models" %>
