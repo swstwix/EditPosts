@@ -59,9 +59,7 @@
     width: 50%;
 }
 
-.leftpanel fieldset {
-    width: 100%;
-}
+.leftpanel fieldset { width: 100%; }
 
 .rightpanel {
     display: block;

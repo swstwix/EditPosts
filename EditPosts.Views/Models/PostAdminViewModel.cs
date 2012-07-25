@@ -14,12 +14,12 @@ namespace EditPosts.Views.Models
 
         public int BeginIndex()
         {
-            return (CurrentPage - 1) * PostsPerPage;
+            return (CurrentPage - 1)*PostsPerPage;
         }
 
         public int EndIndex()
         {
-            int ans = CurrentPage * PostsPerPage - 1;
+            int ans = CurrentPage*PostsPerPage - 1;
             //check when it is last page
             if (ans > Posts.Count())
                 ans = Posts.Count();

@@ -1,10 +1,13 @@
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using EditPosts.Domain.Models;
 
 namespace EditPosts.PresentationServices.ViewModels.PostsModels
 {
-    public class PostIndexModel
+    public class PostDetailsViewModel
     {
-        public IEnumerable<Post> LatestPosts { get; set; }
+        public Post Post { get; set; }
     }
 }

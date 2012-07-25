@@ -5,7 +5,7 @@ using EditPosts.Domain.Models;
 
 namespace EditPosts.Views.Models
 {
-    public class PostDetailsViewModel
+    public class PostEditViewModel
     {
         private string tag;
 

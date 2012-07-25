@@ -1,11 +1,12 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<hibernate-mapping xmlns ="urn:nhibernate-mapping-2.2" assembly="EditPosts.Domain" namespace="EditPosts.Domain.Models">
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="EditPosts.Domain" namespace="EditPosts.Domain.Models">
   <sql-query name="get_tag">
-    <query-param name="Id" type="System.Int32"/>
+    <query-param name="Id" type="System.Int32" />
     <return class="Tag">
-      <return-property name="Id" column="Id"/>
-      <return-property name="Name" column="Name"/>
-      <return-property name="Rating" column="Rating"/>
+      <return-property name="Id" column="Id" />
+      <return-property name="Name" column="Name" />
+      <return-property name="Rating" column="Rating" />
     </return>
     exec get_tag @id=:id
   </sql-query>

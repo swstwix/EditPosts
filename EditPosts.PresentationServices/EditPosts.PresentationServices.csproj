@@ -32,6 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -47,6 +48,7 @@
     <Compile Include="Services\IPostPresentationService.cs" />
     <Compile Include="Services\ITagPresentationService.cs" />
     <Compile Include="ViewModels\MixedModels\TagCloudWithBestPostsModel.cs" />
+    <Compile Include="ViewModels\PostsModels\PostDetailsViewModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostIndexModel.cs" />
     <Compile Include="ViewModels\TagsModels\TagIndexModel.cs" />
   </ItemGroup>

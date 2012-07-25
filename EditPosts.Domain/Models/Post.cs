@@ -8,8 +8,6 @@ namespace EditPosts.Domain.Models
     {
         public virtual ICollection<Tag> Tags { get; set; }
 
-        #region IPost Members
-
         public virtual int Id { get; set; }
 
         [StringLength(255), Required]
@@ -20,7 +18,5 @@ namespace EditPosts.Domain.Models
         public virtual DateTime PostDate { get; set; }
 
         public virtual int HitCount { get; set; }
-
-        #endregion IPost Members
     }
 }

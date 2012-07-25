@@ -87,7 +87,7 @@ namespace EditPosts.Views.Models
                            {"/pre", "\n"}
                        };
 
-            IgnoreTags = new HashSet<string> { "script", "noscript", "style", "object" };
+            IgnoreTags = new HashSet<string> {"script", "noscript", "style", "object"};
         }
 
         protected bool EndOfText
@@ -228,7 +228,7 @@ namespace EditPosts.Views.Models
         // Safely returns the character at the current position
         protected char Peek()
         {
-            return (Pos < Html.Length) ? Html[Pos] : (char)0;
+            return (Pos < Html.Length) ? Html[Pos] : (char) 0;
         }
 
         // Safely advances to current position to the next character
@@ -268,7 +268,7 @@ namespace EditPosts.Views.Models
                 // Opening quote
                 MoveAhead();
                 // Find end of value
-                Pos = Html.IndexOfAny(new[] { c, '\r', '\n' }, Pos);
+                Pos = Html.IndexOfAny(new[] {c, '\r', '\n'}, Pos);
                 if (Pos < 0)
                     Pos = Html.Length;
                 else
@@ -414,6 +414,6 @@ namespace EditPosts.Views.Models
             }
         }
 
-        #endregion Nested type: TextBuilder
+        #endregion
     }
 }

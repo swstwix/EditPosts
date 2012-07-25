@@ -94,7 +94,7 @@
     <Compile Include="Models\PostAdminViewModel.cs" />
     <Compile Include="Models\PostIndexViewModel.cs" />
     <Compile Include="Models\PostPreviewViewModel.cs" />
-    <Compile Include="Models\PostDetailsViewModel.cs" />
+    <Compile Include="Models\PostEditViewModel.cs" />
     <Compile Include="Models\TagCloudWithBestPost.cs" />
     <Compile Include="Plumbing\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -1922,11 +1922,11 @@
     <Content Include="Scripts\Tagit\js\tagit-themeroller.js" />
     <Content Include="Scripts\Tagit\js\tagit.js" />
     <Content Include="Views\Post\Admin.aspx" />
-    <Content Include="Views\Post\Details.aspx" />
+    <Content Include="Views\Post\Edit.aspx" />
     <Content Include="Views\Post\Index.aspx" />
     <Content Include="Views\Post\TagsAndPopularPosts.aspx" />
     <Content Include="Views\Shared\Preview.ascx" />
-    <Content Include="Views\Post\ViewPost.aspx" />
+    <Content Include="Views\Post\Details.aspx" />
     <Content Include="Views\Tag\Index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -12,9 +12,13 @@ namespace EditPosts.PresentationServices.Services.Concret
             this.tagRepository = tagRepository;
         }
 
+        #region ITagPresentationService Members
+
         public TagIndexModel LoadTagIndexModel(string name)
         {
-            return new TagIndexModel() { Tag = tagRepository.Get(name) };
+            return new TagIndexModel {Tag = tagRepository.Get(name)};
         }
+
+        #endregion
     }
 }

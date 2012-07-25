@@ -13,6 +13,8 @@ namespace EditPosts.Db.Repositories.Concret
             Session = session;
         }
 
+        #region IEntityRepository<T> Members
+
         public IQueryable<T> All()
         {
             return Query();
@@ -51,5 +53,7 @@ namespace EditPosts.Db.Repositories.Concret
             Session.Update(entity);
             Session.Flush();
         }
+
+        #endregion
     }
 }

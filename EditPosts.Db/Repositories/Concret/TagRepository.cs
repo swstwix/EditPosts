@@ -12,6 +12,8 @@ namespace EditPosts.Db.Repositories.Concret
         {
         }
 
+        #region ITagRepository Members
+
         public string AvailableTags()
         {
             var builder2 = new StringBuilder();
@@ -24,7 +26,7 @@ namespace EditPosts.Db.Repositories.Concret
 
         public void DeleteUnusedTags()
         {
-            foreach (var tag in Query())
+            foreach (Tag tag in Query())
             {
                 if (tag.Posts.Count == 0)
                     Delete(tag.Id);
@@ -35,5 +37,7 @@ namespace EditPosts.Db.Repositories.Concret
         {
             return Query().Single(t => t.Name.Equals(name));
         }
+
+        #endregion
     }
 }

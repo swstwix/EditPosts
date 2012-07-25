@@ -12,6 +12,8 @@ namespace EditPosts.Db.Repositories.Concret
         {
         }
 
+        #region IPostRepository Members
+
         public IEnumerable<Post> LatestPosts
         {
             get { return Query().OrderByDescending(p => p.PostDate).Take(5); }
@@ -28,5 +30,7 @@ namespace EditPosts.Db.Repositories.Concret
             post.HitCount++;
             Update(post);
         }
+
+        #endregion
     }
 }

@@ -8,6 +8,6 @@
         <%= Model.PreviewText %>
     </div>
     <br />
-    <%: Html.ActionLink("View", "ViewPost", "Post", new {id = Model.Post.Id},
+    <%: Html.ActionLink("View", "Details", "Post", new {id = Model.Post.Id},
                                         new {@class = "button"}) %>
 </fieldset>

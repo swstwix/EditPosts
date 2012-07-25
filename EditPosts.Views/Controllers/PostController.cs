@@ -41,9 +41,7 @@ namespace EditPosts.Views.Controllers
         [HttpPost]
         public ActionResult Create()
         {
-            var post = new Post {Body = "", Name = "", PostDate = DateTime.Now};
-            postRepository.Save(post);
-            return RedirectToAction("Details", new {id = post.Id});
+            return RedirectToAction("Edit", new {id = default(int)});
         }
 
         [HttpPost]
@@ -57,7 +55,7 @@ namespace EditPosts.Views.Controllers
 
         [HttpGet]
         [ValidateInput(false)]
-        public ActionResult Details(int id)
+        public ActionResult Edit(int id)
         {
             Post post = postRepository.Get(id);
             if (post == null)
@@ -76,26 +74,26 @@ namespace EditPosts.Views.Controllers
             if (isFirstView)
                 postRepository.IncHitCount(post.Id);
 
-            var viewModel = new PostDetailsViewModel {Post = post, AvailableTags = tagRepository.AvailableTags()};
+            var viewModel = new PostEditViewModel {Post = post, AvailableTags = tagRepository.AvailableTags()};
             ViewBag.OldName = post.Name;
 
             return View(viewModel);
         }
 
         [HttpPost]
-        public ActionResult Details(PostDetailsViewModel postDetailsViewModel)
+        public ActionResult Edit(PostEditViewModel postEditViewModel)
         {
             if (ModelState.IsValid)
             {
-                string[] newTags = postDetailsViewModel.Tags != null
-                                       ? postDetailsViewModel.Tags.Split(';')
+                string[] newTags = postEditViewModel.Tags != null
+                                       ? postEditViewModel.Tags.Split(';')
                                        : new string[0];
 
-                Post post = postRepository.Get(postDetailsViewModel.Post.Id);
-                post.Name = postDetailsViewModel.Post.Name;
-                post.Body = postDetailsViewModel.Post.Body;
-                post.HitCount = postDetailsViewModel.Post.HitCount;
-                post.PostDate = postDetailsViewModel.Post.PostDate;
+                Post post = postRepository.Get(postEditViewModel.Post.Id);
+                post.Name = postEditViewModel.Post.Name;
+                post.Body = postEditViewModel.Post.Body;
+                post.HitCount = postEditViewModel.Post.HitCount;
+                post.PostDate = postEditViewModel.Post.PostDate;
 
                 postRepository.Update(post);
 
@@ -131,10 +129,10 @@ namespace EditPosts.Views.Controllers
 
                 tagRepository.DeleteUnusedTags();
 
-                return RedirectToAction("ViewPost", new {id = postDetailsViewModel.Post.Id});
+                return RedirectToAction("Details", new {id = postEditViewModel.Post.Id});
             }
-            ViewBag.OldName = postRepository.Get(postDetailsViewModel.Post.Id).Name;
-            return View(postDetailsViewModel);
+            ViewBag.OldName = postRepository.Get(postEditViewModel.Post.Id).Name;
+            return View(postEditViewModel);
         }
 
         [HttpGet]
@@ -157,10 +155,9 @@ namespace EditPosts.Views.Controllers
          */
 
         [HttpGet]
-        public ActionResult ViewPost(int id)
+        public ActionResult Details(int id)
         {
-            Post post = postRepository.Get(id);
-            return View(post);
+            return View(postPresentationService.LoadPostDetailsViewModel(id));
         }
     }
 }

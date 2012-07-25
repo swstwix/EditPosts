@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using EditPosts.PresentationServices.ViewModels.MixedModels;
+﻿using EditPosts.PresentationServices.ViewModels.MixedModels;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
 
 namespace EditPosts.PresentationServices.Services
@@ -12,5 +8,7 @@ namespace EditPosts.PresentationServices.Services
         PostIndexModel LoadPostIndexModel();
 
         TagCloudWithBestPostsModel LoadTagCloudWithBestPostsModel();
+
+        PostDetailsViewModel LoadPostDetailsViewModel(int id);
     }
 }
