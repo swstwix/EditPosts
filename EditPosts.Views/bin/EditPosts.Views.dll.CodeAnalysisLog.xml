@@ -4,28 +4,28 @@
  <Namespaces>
   <Namespace Name="EditPosts.Views">
    <Messages>
-    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="Breaking">
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="Breaking">
      <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'EditPosts.Views' with another namespace.</Issue>
     </Message>
    </Messages>
   </Namespace>
   <Namespace Name="EditPosts.Views.Controllers">
    <Messages>
-    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="Breaking">
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="Breaking">
      <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'EditPosts.Views.Controllers' with another namespace.</Issue>
     </Message>
    </Messages>
   </Namespace>
   <Namespace Name="EditPosts.Views.Installers">
    <Messages>
-    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="Breaking">
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="Breaking">
      <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'EditPosts.Views.Installers' with another namespace.</Issue>
     </Message>
    </Messages>
   </Namespace>
   <Namespace Name="EditPosts.Views.Plumbing">
    <Messages>
-    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="Breaking">
+    <Message TypeName="AvoidNamespacesWithFewTypes" Category="Microsoft.Design" CheckId="CA1020" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="Breaking">
      <Issue Certainty="50" Level="Warning">Consider merging the types defined in 'EditPosts.Views.Plumbing' with another namespace.</Issue>
     </Message>
    </Messages>
@@ -36,10 +36,10 @@
    <Modules>
     <Module Name="editposts.views.dll">
      <Messages>
-      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="NonBreaking">
+      <Message TypeName="AssembliesShouldHaveValidStrongNames" Category="Microsoft.Design" CheckId="CA2210" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="NonBreaking">
        <Issue Name="NoStrongName" Certainty="95" Level="CriticalError">Sign 'EditPosts.Views.dll' with a strong name key.</Issue>
       </Message>
-      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="NonBreaking">
+      <Message TypeName="MarkAssembliesWithClsCompliant" Category="Microsoft.Design" CheckId="CA1014" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="NonBreaking">
        <Issue Certainty="95" Level="Error">Mark 'EditPosts.Views.dll' with CLSCompliant(true) because it exposes externally visible types.</Issue>
       </Message>
      </Messages>
@@ -48,28 +48,28 @@
        <Types>
         <Type Name="MvcApplication" Kind="Class" Accessibility="Public" ExternallyVisible="True">
          <Messages>
-          <Message Id="Mvc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="Breaking">
+          <Message Id="Mvc" TypeName="IdentifiersShouldBeSpelledCorrectly" Category="Microsoft.Naming" CheckId="CA1704" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="Breaking">
            <Issue Name="Type" Certainty="75" Level="CriticalWarning">Correct the spelling of 'Mvc' in type name 'MvcApplication'.</Issue>
           </Message>
          </Messages>
          <Members>
           <Member Name="#Application_Start()" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message TypeName="MarkMembersAsStatic" Category="Microsoft.Performance" CheckId="CA1822" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views" File="Global.asax.cs" Line="41">The 'this' parameter (or 'Me' in Visual Basic) of 'MvcApplication.Application_Start()' is never used. Mark the member as static (or Shared in Visual Basic) or use 'this'/'Me' in the method body or at least one property accessor, if appropriate.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#BootStartupContainer()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message TypeName="Dispose objects before losing scope" Category="Microsoft.Reliability" CheckId="CA2000" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Name="NonExceptionEdge" Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views" File="Global.asax.cs" Line="35">In method 'MvcApplication.BootStartupContainer()', call System.IDisposable.Dispose on object 'new WindsorContainer()' before all references to it are out of scope.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#RegisterGlobalFilters(System.Web.Mvc.GlobalFilterCollection)" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views" File="Global.asax.cs" Line="19">In externally visible method 'MvcApplication.RegisterGlobalFilters(GlobalFilterCollection)', validate parameter 'filters' before using it.</Issue>
             </Message>
            </Messages>
@@ -84,17 +84,17 @@
          <Members>
           <Member Name="#Details(EditPosts.Views.Models.PostDetailsViewModel)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="Breaking">
+            <Message TypeName="AvoidExcessiveClassCoupling" Category="Microsoft.Maintainability" CheckId="CA1506" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="Breaking">
              <Issue Name="Method" Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Controllers" File="PostController.cs" Line="87">'PostController.Details(PostDetailsViewModel)' is coupled with 32 different types from 13 different namespaces. Rewrite or refactor the method to decrease its class coupling, or consider moving the method to one of the other types it is tightly coupled with. A class coupling above 40 indicates poor maintainability, a class coupling between 40 and 30 indicates moderate maintainability, and a class coupling below 30 indicates good maintainability.</Issue>
             </Message>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Controllers" File="PostController.cs" Line="90">In externally visible method 'PostController.Details(PostDetailsViewModel)', validate parameter 'postDetailsViewModel' before using it.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#Details(System.Int32)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="NonBreaking">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Controllers" File="PostController.cs" Line="64">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'PostController.Details(int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Controllers" File="PostController.cs" Line="66">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'PostController.Details(int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Controllers" File="PostController.cs" Line="71">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'PostController.Details(int)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
@@ -111,7 +111,7 @@
          <Members>
           <Member Name="#Install(Castle.Windsor.IWindsorContainer,Castle.MicroKernel.SubSystems.Configuration.IConfigurationStore)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
            <Messages>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Installers" File="Installer.cs" Line="18">In externally visible method 'Installer.Install(IWindsorContainer, IConfigurationStore)', validate parameter 'container' before using it.</Issue>
             </Message>
            </Messages>
@@ -126,21 +126,21 @@
          <Members>
           <Member Name="#.cctor()" Kind="Method" Static="True" Accessibility="Private" ExternallyVisible="False">
            <Messages>
-            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="NonBreaking">
+            <Message TypeName="InitializeReferenceTypeStaticFieldsInline" Category="Microsoft.Performance" CheckId="CA1810" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="NonBreaking">
              <Issue Certainty="90" Level="CriticalWarning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Models" File="PostPreviewViewModel.cs" Line="54">Initialize all static fields in 'HtmlToText' when those fields are declared and remove the explicit static constructor.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#EatInnerContent(System.String)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
            <Messages>
-            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="NonBreaking">
+            <Message Id="System.String.StartsWith(System.String)" TypeName="SpecifyStringComparison" Category="Microsoft.Globalization" CheckId="CA1307" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="NonBreaking">
              <Issue Certainty="95" Level="Error" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Models" File="PostPreviewViewModel.cs" Line="218">Because the behavior of 'string.StartsWith(string)' could vary based on the current user's locale settings, replace this call in 'HtmlToText.EatInnerContent(string)' with a call to 'string.StartsWith(string, StringComparison)'. If the result of 'string.StartsWith(string, StringComparison)' will be displayed to the user, such as when sorting a list of items for display in a list box, specify 'StringComparison.CurrentCulture' or 'StringComparison.CurrentCultureIgnoreCase' as the 'StringComparison' parameter. If comparing case-insensitive identifiers, such as file paths, environment variables, or registry keys and values, specify 'StringComparison.OrdinalIgnoreCase'. Otherwise, if comparing case-sensitive identifiers, specify 'StringComparison.Ordinal'.</Issue>
             </Message>
            </Messages>
           </Member>
           <Member Name="#ParseTag(System.Boolean&amp;)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="False">
            <Messages>
-            <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message Id="System.String.ToLower" TypeName="SpecifyCultureInfo" Category="Microsoft.Globalization" CheckId="CA1304" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Certainty="95" Level="Error" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Models" File="PostPreviewViewModel.cs" Line="185">Because the behavior of 'string.ToLower()' could vary based on the current user's locale settings, replace this call in 'HtmlToText.ParseTag(out bool)' with a call to 'string.ToLower(CultureInfo)'. If the result of 'string.ToLower(CultureInfo)' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'CultureInfo' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
            </Messages>
@@ -153,7 +153,7 @@
            <Accessors>
             <Accessor Name="#set_Post(EditPosts.Domain.Models.Post)" Kind="Method" Static="False" Accessibility="Public" ExternallyVisible="True">
              <Messages>
-              <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+              <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
                <Issue Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Models" File="PostPreviewViewModel.cs" Line="20">In externally visible method 'PostPreviewViewModel.Post.set(Post)', validate parameter 'value' before using it.</Issue>
               </Message>
              </Messages>
@@ -170,10 +170,10 @@
          <Members>
           <Member Name="#GetControllerInstance(System.Web.Routing.RequestContext,System.Type)" Kind="Method" Static="False" Accessibility="Family" ExternallyVisible="True">
            <Messages>
-            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="NonBreaking">
+            <Message Id="System.String.Format(System.String,System.Object)" TypeName="SpecifyIFormatProvider" Category="Microsoft.Globalization" CheckId="CA1305" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="NonBreaking">
              <Issue Name="IFormatProviderAlternateString" Certainty="95" Level="Error" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Plumbing" File="WindsorControllerFactory.cs" Line="26">Because the behavior of 'string.Format(string, object)' could vary based on the current user's locale settings, replace this call in 'WindsorControllerFactory.GetControllerInstance(RequestContext, Type)' with a call to 'string.Format(IFormatProvider, string, params object[])'. If the result of 'string.Format(IFormatProvider, string, params object[])' will be displayed to the user, specify 'CultureInfo.CurrentCulture' as the 'IFormatProvider' parameter. Otherwise, if the result will be stored and accessed by software, such as when it is persisted to disk or to a database, specify 'CultureInfo.InvariantCulture'.</Issue>
             </Message>
-            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:39:04Z" FixCategory="DependsOnFix">
+            <Message Id="0" TypeName="Validate arguments of public methods" Category="Microsoft.Design" CheckId="CA1062" Status="Active" Created="2012-07-25 10:49:47Z" FixCategory="DependsOnFix">
              <Issue Certainty="75" Level="Warning" Path="C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Views\Plumbing" File="WindsorControllerFactory.cs" Line="26">In externally visible method 'WindsorControllerFactory.GetControllerInstance(RequestContext, Type)', validate parameter 'requestContext' before using it.</Issue>
             </Message>
            </Messages>

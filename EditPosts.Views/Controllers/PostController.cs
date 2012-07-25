@@ -146,10 +146,7 @@ namespace EditPosts.Views.Controllers
         [HttpGet]
         public ActionResult TagsAndPopularPosts()
         {
-            var viewModel = new TagCloudWithBestPost
-                                {AllTags = tagRepository.Query(), BestPosts = postRepository.MostPopularPosts};
-
-            return View(viewModel);
+            return View(postPresentationService.LoadTagCloudWithBestPostsModel());
         }
 
         /**

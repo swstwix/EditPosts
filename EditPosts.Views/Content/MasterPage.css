@@ -56,7 +56,11 @@
 .leftpanel {
     display: block;
     float: left;
-    width: 40%;
+    width: 50%;
+}
+
+.leftpanel fieldset {
+    width: 100%;
 }
 
 .rightpanel {

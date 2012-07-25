@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<EditPosts.Views.Models.TagCloudWithBestPost>" %>
+﻿<%@ Page Language="C#" Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.MixedModels.TagCloudWithBestPostsModel>" %>
 
 <%@ Import Namespace="EditPosts.Domain" %>
 <%@ Import Namespace="EditPosts.Domain.Models" %>

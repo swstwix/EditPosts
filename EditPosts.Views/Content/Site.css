@@ -13,7 +13,8 @@ section { display: block; }
 /* Styles for basic forms
 -----------------------------------------------------------*/
 
-fieldset {
+fieldset 
+{
     border: 1px solid #ddd;
     margin: 0 0 1.5em 0;
     padding: 0 1.4em 1.4em 1.4em;
