@@ -12,6 +12,7 @@
         <% foreach (Post post in Model.LatestPosts)
            {%>
             <% Html.RenderPartial("Preview", new PostPreviewViewModel {Post = post}); %>
+            <hr />
         <% } %>
         <hr />
     </div>

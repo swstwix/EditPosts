@@ -9,12 +9,10 @@ namespace EditPosts.PresentationServices.Services.Concret
     public class PostPresentationService : IPostPresentationService
     {
         private readonly IPostRepository postRepository;
-        private readonly ITagRepository tagRepository;
 
-        public PostPresentationService(IPostRepository postRepository, ITagRepository tagRepository)
+        public PostPresentationService(IPostRepository postRepository)
         {
             this.postRepository = postRepository;
-            this.tagRepository = tagRepository;
         }
 
         #region IPostPresentationService Members
