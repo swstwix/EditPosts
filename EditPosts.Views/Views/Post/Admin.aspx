@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
-    Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostAdminModel>" %>
+         Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostAdminModel>" %>
+<%@ Import Namespace="EditPosts.Domain.Models" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
     Admin
@@ -23,31 +24,31 @@
                 </th>
             </thead>
             <tbody>
-                <% foreach (var post in Model.Posts)
+                <% foreach (Post post in Model.Posts)
                    {%>
-                <tr>
-                    <td>
-                        <%= post.Name %>
-                    </td>
-                    <td>
-                        <%= post.PostDate%>
-                    </td>
-                    <td>
-                        <%= post.HitCount %>
-                    </td>
-                    <td>
-                        <span>
-                            <% using (Html.BeginForm("Delete", "Post", new { id = post.Id}))
-                               { %>
-                            <%= Html.ActionLink("View", "Details", "Post", new {id = post.Id},
+                    <tr>
+                        <td>
+                            <%= post.Name %>
+                        </td>
+                        <td>
+                            <%= post.PostDate %>
+                        </td>
+                        <td>
+                            <%= post.HitCount %>
+                        </td>
+                        <td>
+                            <span>
+                                <% using (Html.BeginForm("Delete", "Post", new {id = post.Id}))
+                                   { %>
+                                    <%= Html.ActionLink("View", "Details", "Post", new {id = post.Id},
                                         new {@class = "button"}) %>
-                            <%= Html.ActionLink("Edit", "Edit", "Post",
+                                    <%= Html.ActionLink("Edit", "Edit", "Post",
                                         new {id = post.Id},
                                         new {@class = "button"}) %>
-                            <input type="submit" value="Delete" class="button" />
-                            <% } %></span>
-                    </td>
-                </tr>
+                                    <input type="submit" value="Delete" class="button" />
+                                <% } %></span>
+                        </td>
+                    </tr>
                 <% } %>
             </tbody>
         </table>

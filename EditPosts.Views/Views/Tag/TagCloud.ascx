@@ -1,7 +1,5 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<EditPosts.PresentationServices.ViewModels.TagsModels.TagCloudModel>" %>
-
-<%@ Import Namespace="EditPosts.Domain.Models" %>
-<%@ Import Namespace="EditPosts.Views.Models" %>
+<%@ Import Namespace="EditPosts.PresentationServices.ViewModels.TagsModels.TagItem" %>
 <div id="xlistwarp">
     <h2>
         Tag cloud :</h2>
@@ -11,7 +9,7 @@
                 Tag with hit rating :</h4>
         </legend>
         <ul id="xlist">
-            <% foreach (var tag in Model.AllTags)
+            <% foreach (TagCloudItemModel tag in Model.AllTags)
                { %>
                 <li value="<%= tag.Rating %>">
                     <%= Html.ActionLink(string.Format("{0}({1})", tag.Name, tag.Rating), "Index", "Tag",

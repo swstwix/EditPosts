@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Text;
 using EditPosts.Domain.Models;
 
-namespace EditPosts.Views.Models
+namespace EditPosts.PresentationServices.ViewModels.PostsModels
 {
     public class PostEditViewModel
     {

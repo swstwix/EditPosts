@@ -6,7 +6,7 @@ using System.Web.Mvc;
 using EditPosts.Db.Repositories;
 using EditPosts.Domain.Models;
 using EditPosts.PresentationServices.Services;
-using EditPosts.Views.Models;
+using EditPosts.PresentationServices.ViewModels.PostsModels;
 using Iesi.Collections.Generic;
 
 namespace EditPosts.Views.Controllers
@@ -52,13 +52,15 @@ namespace EditPosts.Views.Controllers
         }
 
         [HttpGet]
+        public ActionResult Details(int id)
+        {
+            return View(postPresentationService.LoadPostDetailsViewModel(id));
+        }
+
+        [HttpGet]
         [ValidateInput(false)]
         public ActionResult Edit(int id)
         {
-            Post post = postRepository.Get(id);
-            if (post == null)
-                throw new HttpException(404, string.Format("Wrong post id : '{0}'", id));
-
             string cookieName = string.Format("{0}", id);
             bool isFirstView = Request.Cookies[cookieName] == null;
 
@@ -69,13 +71,10 @@ namespace EditPosts.Views.Controllers
                 Response.Cookies.Add(cookie);
             }
 
-            if (isFirstView)
-                postRepository.IncHitCount(post.Id);
+            PostEditViewModel model = postPresentationService.LoadPostEditViewModel(id, isFirstView);
+            ViewBag.OldName = model.Post.Name;
 
-            var viewModel = new PostEditViewModel {Post = post, AvailableTags = tagRepository.AvailableTags()};
-            ViewBag.OldName = post.Name;
-
-            return View(viewModel);
+            return View(model);
         }
 
         [HttpPost]
@@ -145,11 +144,5 @@ namespace EditPosts.Views.Controllers
          * Client containt cookie means that he view this post before
          * Client doesn't containt cookie means that he view this post for the first time
          */
-
-        [HttpGet]
-        public ActionResult Details(int id)
-        {
-            return View(postPresentationService.LoadPostDetailsViewModel(id));
-        }
     }
 }

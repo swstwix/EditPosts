@@ -1,5 +1,4 @@
 ﻿using EditPosts.PresentationServices.ViewModels.PostsModels;
-using EditPosts.PresentationServices.ViewModels.TagsModels;
 
 namespace EditPosts.PresentationServices.Services
 {
@@ -10,5 +9,7 @@ namespace EditPosts.PresentationServices.Services
         PostDetailsModel LoadPostDetailsViewModel(int id);
 
         PostAdminModel LoadPostAdminModel();
+
+        PostEditViewModel LoadPostEditViewModel(int postId, bool isFirstView);
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="Utils\Extensions\StringExtension.cs" />
     <Compile Include="ViewModels\PostsModels\PostAdminModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostDetailsModel.cs" />
+    <Compile Include="ViewModels\PostsModels\PostEditViewModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostPreviewModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostIndexModel.cs" />
     <Compile Include="ViewModels\TagsModels\TagCloudModel.cs" />
