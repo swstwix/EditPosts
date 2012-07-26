@@ -11,5 +11,9 @@ namespace EditPosts.PresentationServices.Services
         PostAdminModel LoadPostAdminModel();
 
         PostEditViewModel LoadPostEditViewModel(int postId, bool isFirstView);
+
+        void SavePostEditViewModel(PostEditViewModel postEditViewModel);
+
+        void DeletePost(int postId);
     }
 }

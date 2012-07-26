@@ -34,7 +34,14 @@ namespace EditPosts.Db.Repositories.Concret
 
         public T Get(int id)
         {
-            return Session.Get<T>(id);
+            try
+            {
+                return Session.Get<T>(id);
+            }
+            catch
+            {
+                return default(T);
+            }
         }
 
         public IQueryable<T> Query()

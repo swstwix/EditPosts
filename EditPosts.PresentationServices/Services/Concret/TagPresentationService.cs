@@ -1,4 +1,5 @@
-﻿using EditPosts.Db.Repositories;
+﻿using System.Collections.Generic;
+using EditPosts.Db.Repositories;
 using System.Linq;
 using EditPosts.PresentationServices.ViewModels.TagsModels;
 using EditPosts.PresentationServices.ViewModels.TagsModels.TagItem;
@@ -26,6 +27,11 @@ namespace EditPosts.PresentationServices.Services.Concret
                                                                                Rating = t.Posts.Where(p => p.Tags.Any(it => it.Id == t.Id)).Sum(p => p.HitCount)
                                                                            })
                        };
+        }
+
+        public IEnumerable<string> LoadTagNamesContains(string term)
+        {
+            return tagRepository.Query().Select(t => t.Name).Where(n => n.Contains(term));
         }
 
         public TagIndexModel LoadTagIndexModel(string name)

@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using EditPosts.Domain.Models;
@@ -7,37 +8,17 @@ namespace EditPosts.PresentationServices.ViewModels.PostsModels
 {
     public class PostEditViewModel
     {
-        private string tag;
+        public int Id { get; set; }
 
-        public Post Post { get; set; }
+        public int HitCount { get; set; }
 
-        public String Tags
-        {
-            get
-            {
-                if (tag == null)
-                {
-                    var builder = new StringBuilder();
+        public DateTime Date { get; set; }
 
-                    if (Post.Tags == null || !Post.Tags.Any())
-                    {
-                        builder.Append(";");
-                    }
-                    else
-                    {
-                        builder.AppendFormat("{0}", Post.Tags.ElementAt(0).Name);
-                        for (int i = 1; i < Post.Tags.Count; i++)
-                        {
-                            builder.AppendFormat(";{0}", Post.Tags.ElementAt(i).Name);
-                        }
-                    }
-                    tag = builder.ToString();
-                }
-                return tag;
-            }
-            set { tag = value; }
-        }
+        [Required]
+        public string Name { get; set; }
 
-        public String AvailableTags { get; set; }
+        public string Tags { get; set; }
+
+        public string Body { get; set; }
     }
 }

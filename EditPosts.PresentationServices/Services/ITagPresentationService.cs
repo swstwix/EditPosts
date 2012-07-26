@@ -1,4 +1,5 @@
-﻿using EditPosts.PresentationServices.ViewModels.TagsModels;
+﻿using System.Collections.Generic;
+using EditPosts.PresentationServices.ViewModels.TagsModels;
 
 namespace EditPosts.PresentationServices.Services
 {
@@ -7,5 +8,7 @@ namespace EditPosts.PresentationServices.Services
         TagIndexModel LoadTagIndexModel(string name);
 
         TagCloudModel LoadTagCloudModel();
+
+        IEnumerable<string> LoadTagNamesContains(string term);
     }
 }

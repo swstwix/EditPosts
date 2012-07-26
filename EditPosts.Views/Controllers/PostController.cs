@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using EditPosts.Db.Repositories;
 using EditPosts.Domain.Models;
 using EditPosts.PresentationServices.Services;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
@@ -19,14 +18,10 @@ namespace EditPosts.Views.Controllers
          */
 
         private readonly IPostPresentationService postPresentationService;
-        private readonly IPostRepository postRepository;
-        private readonly ITagRepository tagRepository;
 
-        public PostController(IPostRepository postRepository, ITagRepository tagRepository,
-                              IPostPresentationService postPresentationService)
+        public PostController(
+            IPostPresentationService postPresentationService)
         {
-            this.postRepository = postRepository;
-            this.tagRepository = tagRepository;
             this.postPresentationService = postPresentationService;
         }
 
@@ -43,12 +38,11 @@ namespace EditPosts.Views.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id, int page)
+        public ActionResult Delete(int id)
         {
-            postRepository.Delete(id);
-            int currentPage = page;
+            postPresentationService.DeletePost(id);
 
-            return RedirectToAction("Admin", new {page = currentPage});
+            return RedirectToAction("Admin");
         }
 
         [HttpGet]
@@ -72,7 +66,7 @@ namespace EditPosts.Views.Controllers
             }
 
             PostEditViewModel model = postPresentationService.LoadPostEditViewModel(id, isFirstView);
-            ViewBag.OldName = model.Post.Name;
+            ViewBag.OldName = model.Name;
 
             return View(model);
         }
@@ -82,53 +76,10 @@ namespace EditPosts.Views.Controllers
         {
             if (ModelState.IsValid)
             {
-                string[] newTags = postEditViewModel.Tags != null
-                                       ? postEditViewModel.Tags.Split(';')
-                                       : new string[0];
-
-                Post post = postRepository.Get(postEditViewModel.Post.Id);
-                post.Name = postEditViewModel.Post.Name;
-                post.Body = postEditViewModel.Post.Body;
-                post.HitCount = postEditViewModel.Post.HitCount;
-                post.PostDate = postEditViewModel.Post.PostDate;
-
-                postRepository.Update(post);
-
-                var mustRemovedTags = new Stack<Tag>();
-
-                foreach (Tag x in post.Tags)
-                    if (!newTags.Contains(x.Name))
-                        mustRemovedTags.Push(x);
-
-                while (mustRemovedTags.Count != 0)
-                {
-                    Tag tag = mustRemovedTags.Pop();
-                    post.Tags.Remove(tag);
-                }
-                postRepository.Update(post);
-                foreach (string newTag in newTags)
-                    if (!String.IsNullOrWhiteSpace(newTag))
-                    {
-                        if (tagRepository.All().Count(t => t.Name.Equals(newTag)) == 0)
-                        {
-                            var newPostTag = new Tag {Name = newTag, Posts = new HashedSet<Post>()};
-                            newPostTag.Posts.Add(post);
-                            tagRepository.Save(newPostTag);
-                        }
-                        else
-                        {
-                            Tag tag = tagRepository.All().Single(t => t.Name.Equals(newTag));
-                            tag.Posts.Add(post);
-                            post.Tags.Add(tag);
-                            tagRepository.Update(tag);
-                        }
-                    }
-
-                tagRepository.DeleteUnusedTags();
-
-                return RedirectToAction("Details", new {id = postEditViewModel.Post.Id});
+                postPresentationService.SavePostEditViewModel(postEditViewModel);
+                return RedirectToAction("Admin");
             }
-            ViewBag.OldName = postRepository.Get(postEditViewModel.Post.Id).Name;
+
             return View(postEditViewModel);
         }
 

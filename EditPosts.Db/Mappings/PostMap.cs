@@ -14,7 +14,7 @@ namespace EditPosts.Db.Mappings
             Map(p => p.HitCount);
             Map(p => p.Name);
             Map(p => p.Body).Length(Int32.MaxValue - 1);
-            HasManyToMany(p => p.Tags).Table("Posts_Tags").Cascade.AllDeleteOrphan().Not.LazyLoad().AsSet();
+            HasManyToMany(p => p.Tags).Table("Posts_Tags").LazyLoad().Inverse().Cascade.All();
         }
     }
 }

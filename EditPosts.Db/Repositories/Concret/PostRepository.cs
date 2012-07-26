@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using EditPosts.Domain.Models;
@@ -27,6 +28,8 @@ namespace EditPosts.Db.Repositories.Concret
         public void IncHitCount(int postId)
         {
             Post post = Get(postId);
+            if (post == default(Post))
+                return;
             post.HitCount++;
             Update(post);
         }

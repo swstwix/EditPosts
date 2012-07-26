@@ -35,7 +35,14 @@ namespace EditPosts.Db.Repositories.Concret
 
         public Tag Get(string name)
         {
-            return Query().Single(t => t.Name.Equals(name));
+            try
+            {
+                return Query().Single(t => t.Name.Equals(name));
+            }
+            catch
+            {
+                return default(Tag);
+            }
         }
 
         #endregion

@@ -1,78 +1,118 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
-         Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostEditViewModel>" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master" Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostEditViewModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%= Model.Post.Name %>
+    Edit
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <%= Html.ValidationSummary("Create was unsuccessful. Please correct the errors and try again.") %>
-    <h2>
-        <%= ViewData.GetViewDataInfo("OldName").Value %></h2>
-    <div>
-        Hit count :
-        <%= Model.Post.HitCount %>
-    </div>
-    <div>
-        Date created :
-        <%= Model.Post.PostDate %>
-        <br />
-        <br />
-    </div>
-    <hr />
-    <h4>
-        Try to edit :</h4>
-    <% using (Html.BeginForm("Edit", "Post"))
-       { %>
-        <script type="text/javascript" src='<%= Url.Content("~/Scripts/ckeditor/ckeditor.js") %>'> </script>
-        <%= Html.LabelFor(model => model.Post.Name, "Name : ") %>
-        <br />
-        <%= Html.TextBoxFor(model => model.Post.Name, new {style = "width: 100px;"}) %>
-        <%= Html.ValidationMessageFor(model => model.Post.Name) %>
-        <div>
-            Tags :</div>
-        <div>
-            <ul id="tags" name="tags">
-                <% foreach (string tag in Model.Tags.Split(';'))
-                   {%>
-                    <li>
-                        <%= tag %></li>
-                <% } %>
-            </ul>
-            <script src='<%= Url.Content("~/Scripts/Tagit/demo/js/jquery.1.7.2.min.js") %>'> </script>
-            <script src='<%= Url.Content("~/Scripts/Tagit/demo/js/jquery-ui.1.8.20.min.js") %>'> </script>
-            <script src='<%= Url.Content("~/Scripts/Tagit/js/tagit.js") %>'> </script>
-            <link type="text/css" rel="stylesheet" href='<%= Url.Content("~/Scripts/Tagit/css/tagit-dark-grey.css") %>' />
-            <script type="text/javascript">
-                var availableTags = [
-                    <%= Model.AvailableTags %>
-                ];
 
-                $("#tags").tagit({ tagSource: availableTags });
-                var changeField = function() {
-                    var selector = $("#tags>li");
-                    var s = "";
-                    selector.each(function(index) {
-                        var len = $(this).text().toString().length;
-                        s = s + $(this).text().toString().substring(0, len - 1) + ";";
+<asp:Content ID="Content2" ContentPlaceHolderID="HeaderContent" runat="server">
+    <script src="<%: Url.Content("~/Scripts/ckeditor/ckeditor.js") %>"> </script>
+    <script src="<%: Url.Content("~/Scripts/jquery-ui-1.8.11.js") %>"> </script>
+    <link rel="stylesheet" type="text/css" href="<%: Url.Content("~/Content/themes/base/jquery.ui.all.css") %>"></link>
+    <script type="text/javascript">
+        $(function() {
+            $(function() {
+
+                function split(val) {
+                    return val.split( /,\s*/ );
+                }
+
+                function extractLast(term) {
+                    return split(term).pop();
+                }
+
+                $("#Tags")
+                    // don't navigate away from the field on tab when selecting an item
+                    .bind("keydown", function(event) {
+                        if (event.keyCode === $.ui.keyCode.TAB &&
+                            $(this).data("autocomplete").menu.active) {
+                            event.preventDefault();
+                        }
+                    })
+                    .autocomplete({
+                        source: function(request, response) {
+                            $.getJSON("<%= Url.Action("TagsForAutocomplete", "Tag") %>", {
+                                term: extractLast(request.term)
+                            }, response);
+                        },
+                        search: function() {
+                            // custom minLength
+                            return extractLast(this.value);
+                        },
+                        focus: function() {
+                            // prevent value inserted on focus
+                            return false;
+                        },
+                        select: function(event, ui) {
+                            var terms = split(this.value);
+                            // remove the current input
+                            terms.pop();
+                            // add the selected item
+                            terms.push(ui.item.value);
+                            // add placeholder to get the comma-and-space at the end
+                            terms.push("");
+                            this.value = terms.join(", ");
+                            return false;
+                        }
                     });
-                    var len = s.length;
-                    s = s.substring(0, len - 1);
-                    $("#Tags").val(s);
-                };
-                $("#tags").keydown(changeField);
-                $("#tags").mouseleave(changeField);
-            </script>
-        </div>
-        <p>
-            <%= Html.TextAreaFor(model => model.Post.Body, new {id = "ckeditor"}) %>
-            <%= Html.HiddenFor(p => p.Post.PostDate) %>
-            <%= Html.HiddenFor(p => p.Post.Id) %>
-            <%= Html.HiddenFor(p => p.Tags) %>
-            <%= Html.HiddenFor(p => p.Post.HitCount) %>
-        </p>
-        <input type="submit" value="Save text" class="button" />
-    <% } %>
-    <script>
-        CKEDITOR.replace('ckeditor');
+            });
+        });
+
     </script>
+</asp:Content>
+
+<asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+
+    <h2>
+        <%= ViewData.GetViewDataInfo("oldName").Value %>
+    </h2>
+
+    <% using (Html.BeginForm())
+       {%>
+        <%: Html.ValidationSummary(true) %>
+
+        <div>
+            <%: Html.LabelFor(model => model.HitCount) %> :
+            <%: Html.DisplayFor(model => model.HitCount) %>
+        </div>
+
+        <div>
+            <%: Html.LabelFor(model => model.Date) %> :
+            <%: Html.DisplayFor(model => model.Date) %>
+        </div>
+            
+        <hr/>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Name) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Name) %>
+            <%: Html.ValidationMessageFor(model => model.Name) %>
+        </div>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Tags) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.EditorFor(model => model.Tags) %>
+            <%: Html.ValidationMessageFor(model => model.Tags) %>
+        </div>
+
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.Body) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.TextAreaFor(model => model.Body, new {@class = "ckeditor"}) %>
+            <%: Html.ValidationMessageFor(model => model.Body) %>
+        </div>
+
+        <p>
+            <input type="submit" value="Save" class="button"/>
+        </p>
+    <% } %>
+
+    <div>
+        <%: Html.ActionLink("Back to List", "Index") %>
+    </div>
+
 </asp:Content>

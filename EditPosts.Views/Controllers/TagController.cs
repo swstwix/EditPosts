@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Linq;
+using System.Web.Mvc;
 using EditPosts.PresentationServices.Services;
 
 namespace EditPosts.Views.Controllers
@@ -20,6 +21,16 @@ namespace EditPosts.Views.Controllers
         public ActionResult TagCloud()
         {
             return View(tagPresentationService.LoadTagCloudModel());
+        }
+
+        public JsonResult TagsForAutocomplete(string term)
+        {
+            return Json(tagPresentationService.LoadTagNamesContains(term).Select(n => new
+                                                                                          {
+                                                                                              label = n,
+                                                                                              value = n,
+                                                                                          })
+                , JsonRequestBehavior.AllowGet);
         }
     }
 }

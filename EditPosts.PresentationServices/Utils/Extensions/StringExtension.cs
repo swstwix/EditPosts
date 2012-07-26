@@ -8,6 +8,7 @@ namespace EditPosts.PresentationServices.Utils.Extensions
         {
             const string pattern = "<[^>]*>";
             var regexp = new Regex(pattern);
+            str = str ?? string.Empty;
             var fullPreview = regexp.Replace(str.Replace("\t", string.Empty).Replace("\r", string.Empty)
                 .Replace("\n", string.Empty).Replace("&nbsp", string.Empty).Replace("&msdash", string.Empty), " ");
             return fullPreview.Length > maxLength ? fullPreview.Substring(0, maxLength) : fullPreview;
