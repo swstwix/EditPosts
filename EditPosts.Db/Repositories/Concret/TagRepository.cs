@@ -26,10 +26,9 @@ namespace EditPosts.Db.Repositories.Concret
 
         public void DeleteUnusedTags()
         {
-            foreach (Tag tag in Query())
+            foreach (var tag in Query().Where(t => !t.Posts.Any()))
             {
-                if (tag.Posts.Count == 0)
-                    Delete(tag.Id);
+                Delete(tag);
             }
         }
 
