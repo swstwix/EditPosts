@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using EditPosts.Db.Repositories;
@@ -51,7 +52,7 @@ namespace EditPosts.PresentationServices.Services.Concret
             Post post = postRepository.Get(postId) ?? new Post
                                                           {
                                                               PostDate = DateTime.Now,
-                                                              HitCount = 1,
+                                                              HitCount = 0,
                                                               Id = 0,
                                                               Body = string.Empty,
                                                               Name = "New post",
@@ -82,26 +83,23 @@ namespace EditPosts.PresentationServices.Services.Concret
             post.Name = postEditViewModel.Name;
             post.Body = postEditViewModel.Body;
             post.Tags.Clear();
+            postRepository.Save(post);
             postEditViewModel.Tags = postEditViewModel.Tags ?? string.Empty;
-            var tagNames = postEditViewModel.Tags.Split(',').Where(s => !string.IsNullOrWhiteSpace(s));
+            var tagNames = postEditViewModel.Tags.Split(',').Select(s => s.Replace(" ", string.Empty)).Where(s => !string.IsNullOrWhiteSpace(s));
             foreach (string tagName in tagNames)
             {
-                var dbtag = tagRepository.Get(tagName);
-                if (dbtag != null)
-                    if (!dbtag.Posts.Contains(post))
-                        dbtag.Posts.Add(post);
-                post.Tags.Add(dbtag ?? new Tag
-                                           {
-                                               Name = tagName, 
-                                               Posts = new Collection<Post>(new Post[] {post})
-                                           });
+                var tag = tagRepository.Get(tagName) ?? new Tag() {Name = tagName, Posts = new HashSet<Post>()};
+                tag.Posts.Add(post);
+                post.Tags.Add(tag);
             }
             postRepository.Save(post);
+            tagRepository.DeleteUnusedTags();
         }
 
         public void DeletePost(int postId)
         {
             postRepository.Delete(postId);
+            tagRepository.DeleteUnusedTags();
         }
 
         #endregion

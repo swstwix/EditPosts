@@ -10,7 +10,7 @@ namespace EditPosts.Db.Mappings
             Table("Tags");
             Id(t => t.Id);
             Map(t => t.Name);
-            HasManyToMany(x => x.Posts).LazyLoad().Table("Posts_Tags").Cascade.All();
+            HasManyToMany(x => x.Posts).LazyLoad().Table("Posts_Tags").AsSet().Cascade.SaveUpdate();
         }
     }
 }
