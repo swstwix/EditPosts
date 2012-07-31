@@ -1,9 +1,10 @@
 using System.Linq;
 using System.Text;
 using EditPosts.Domain.Models;
+using EditPosts.Domain.Services;
 using NHibernate;
 
-namespace EditPosts.Db.Repositories.Concret
+namespace EditPosts.Db.Repositories
 {
     public class TagRepository : EntityRepository<Tag>, ITagRepository
     {

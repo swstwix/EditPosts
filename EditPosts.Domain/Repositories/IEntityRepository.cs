@@ -1,6 +1,6 @@
 using System.Linq;
 
-namespace EditPosts.Db.Repositories
+namespace EditPosts.Domain.Repositories
 {
     public interface IEntityRepository<T> : IRepository
     {

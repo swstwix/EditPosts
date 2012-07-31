@@ -1,6 +1,6 @@
 using EditPosts.Domain.Models;
 
-namespace EditPosts.Db.Repositories
+namespace EditPosts.Domain.Repositories
 {
     public interface ITagRepository : IEntityRepository<Tag>
     {

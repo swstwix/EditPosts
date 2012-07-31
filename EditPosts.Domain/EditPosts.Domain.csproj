@@ -58,6 +58,10 @@
     <Compile Include="Models\Post.cs" />
     <Compile Include="Models\Tag.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IEntityRepository.cs" />
+    <Compile Include="Services\IPostRepository.cs" />
+    <Compile Include="Services\IRepository.cs" />
+    <Compile Include="Services\ITagRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

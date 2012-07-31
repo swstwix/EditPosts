@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using EditPosts.Domain.Models;
 
-namespace EditPosts.Db.Repositories
+namespace EditPosts.Domain.Repositories
 {
     public interface IPostRepository : IEntityRepository<Post>
     {

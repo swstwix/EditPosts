@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using EditPosts.Db.Repositories;
 using EditPosts.Domain.Models;
+using EditPosts.Domain.Services;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
 
 namespace EditPosts.PresentationServices.Services.Concret

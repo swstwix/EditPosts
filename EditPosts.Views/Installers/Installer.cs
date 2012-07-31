@@ -3,7 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using EditPosts.Db;
-using EditPosts.Db.Repositories;
+using EditPosts.Domain.Services;
 using EditPosts.PresentationServices.Services;
 using NHibernate;
 

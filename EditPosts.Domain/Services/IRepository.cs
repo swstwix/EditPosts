@@ -1,4 +1,4 @@
-﻿namespace EditPosts.Db.Repositories
+namespace EditPosts.Domain.Services
 {
     public interface IRepository
     {

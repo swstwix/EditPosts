@@ -1,8 +1,9 @@
 using System.Linq;
+using EditPosts.Domain.Services;
 using NHibernate;
 using NHibernate.Linq;
 
-namespace EditPosts.Db.Repositories.Concret
+namespace EditPosts.Db.Repositories
 {
     public class EntityRepository<T> : IEntityRepository<T>
     {

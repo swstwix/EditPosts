@@ -1,10 +1,10 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using EditPosts.Domain.Models;
+using EditPosts.Domain.Services;
 using NHibernate;
 
-namespace EditPosts.Db.Repositories.Concret
+namespace EditPosts.Db.Repositories
 {
     public class PostRepository : EntityRepository<Post>, IPostRepository
     {
