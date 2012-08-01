@@ -6,11 +6,9 @@
     <File id="9019F2B5-B897-482D-B442-2A48D23BE3E1/d:Services/f:ITagPresentationService.cs" caret="190" fromTop="5" />
     <File id="9019F2B5-B897-482D-B442-2A48D23BE3E1/d:ViewModels/d:PostsModels/f:PostEditViewModel.cs" caret="279" fromTop="10" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/f:Global.asax" caret="4" fromTop="0" />
-    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/f:Global.asax.cs" caret="963" fromTop="15" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Installers/f:Installer.cs" caret="497" fromTop="13" />
     <File id="9019F2B5-B897-482D-B442-2A48D23BE3E1/d:Services/d:Concret/f:TagPresentationService.cs" caret="1278" fromTop="28" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Controllers/f:TagController.cs" caret="641" fromTop="22" />
-    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Plumbing/f:WindsorControllerFactory.cs" caret="963" fromTop="19" />
     <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/d:Models/f:Tag.cs" caret="643" fromTop="23" />
     <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/d:Models/f:Post.cs" caret="854" fromTop="30" />
     <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Views/d:Post/f:Index.aspx" caret="780" fromTop="18" />
@@ -25,6 +23,9 @@
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Mappings/f:TagMap.cs" caret="380" fromTop="12" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Mappings/f:PostMap.cs" caret="526" fromTop="16" />
     <File id="F27A341B-7789-4083-8518-C7628142B386/d:Repositories/f:EntityRepository.cs" caret="1368" fromTop="16" />
+    <File id="EBC6998D-CDC3-421F-AD02-14D4424CBAF6/f:packages.config" caret="47" fromTop="2" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/f:Global.asax.cs" caret="327" fromTop="0" />
+    <File id="C5D6393A-56B8-499E-B390-C73B0A823D6E/d:Plumbing/f:WindsorControllerFactory.cs" caret="193" fromTop="8" />
   </RecentFiles>
   <RecentEdits>
     <File id="9019F2B5-B897-482D-B442-2A48D23BE3E1/d:Services/d:Concret/f:PostPresentationService.cs" caret="2964" fromTop="34" />

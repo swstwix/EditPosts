@@ -21,28 +21,20 @@ namespace EditPosts.PresentationServices.Services.Concret
 
         #region IPostPresentationService Members
 
-        public PostIndexModel LoadPostIndexModel()
+        public void DeletePost(int postId)
         {
-            return new PostIndexModel
-                       {
-                           LatestPosts = postRepository.LatestPosts
-                               .Select(p => new PostPreviewModel
-                                                {
-                                                    Body = p.Body,
-                                                    PostId = p.Id,
-                                                    Name = p.Name
-                                                })
-                       };
-        }
-
-        public PostDetailsModel LoadPostDetailsViewModel(int id)
-        {
-            return new PostDetailsModel {Post = postRepository.Get(id)};
+            postRepository.Delete(postId);
+            tagRepository.DeleteUnusedTags();
         }
 
         public PostAdminModel LoadPostAdminModel()
         {
-            return new PostAdminModel {Posts = postRepository.Query()};
+            return new PostAdminModel { Posts = postRepository.Query() };
+        }
+
+        public PostDetailsModel LoadPostDetailsViewModel(int id)
+        {
+            return new PostDetailsModel { Post = postRepository.Get(id) };
         }
 
         public PostEditViewModel LoadPostEditViewModel(int postId, bool isFirstView)
@@ -69,6 +61,19 @@ namespace EditPosts.PresentationServices.Services.Concret
                        };
         }
 
+        public PostIndexModel LoadPostIndexModel()
+        {
+            return new PostIndexModel
+                       {
+                           LatestPosts = postRepository.LatestPosts
+                               .Select(p => new PostPreviewModel
+                                                {
+                                                    Body = p.Body,
+                                                    PostId = p.Id,
+                                                    Name = p.Name
+                                                })
+                       };
+        }
         public void SavePostEditViewModel(PostEditViewModel postEditViewModel)
         {
             Post post = postRepository.Get(postEditViewModel.Id) ?? new Post
@@ -95,13 +100,6 @@ namespace EditPosts.PresentationServices.Services.Concret
             postRepository.Save(post);
             tagRepository.DeleteUnusedTags();
         }
-
-        public void DeletePost(int postId)
-        {
-            postRepository.Delete(postId);
-            tagRepository.DeleteUnusedTags();
-        }
-
         #endregion
     }
 }

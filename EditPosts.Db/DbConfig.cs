@@ -18,7 +18,7 @@ namespace EditPosts.Db
                     _config =
                         Fluently.Configure().Database(
                             MsSqlConfiguration.MsSql2008.ConnectionString(
-                                "Data Source=WD-SERVER-5;User ID=TestData;Password=TestData")).Mappings(
+                                "Data Source=.\\SQLEXPRESS;AttachDbFilename=\"C:\\Users\\Twix\\Documents\\Visual Studio 2010\\Projects\\EditPosts\\EditPosts\\EditPosts.Views\\App_Data\\Database1.mdf\";Integrated Security=True;User Instance=True")).Mappings(
                                     m => m.FluentMappings.AddFromAssemblyOf<PostMap>()).
                             BuildConfiguration();
                 if (_config == null)
