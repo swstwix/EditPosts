@@ -88,13 +88,11 @@ namespace EditPosts.PresentationServices.Services.Concret
             post.Name = postEditViewModel.Name;
             post.Body = postEditViewModel.Body;
             post.Tags.Clear();
-            postRepository.Save(post);
             postEditViewModel.Tags = postEditViewModel.Tags ?? string.Empty;
             var tagNames = postEditViewModel.Tags.Split(',').Select(s => s.Replace(" ", string.Empty)).Where(s => !string.IsNullOrWhiteSpace(s));
             foreach (string tagName in tagNames)
             {
                 var tag = tagRepository.Get(tagName) ?? new Tag() {Name = tagName, Posts = new HashSet<Post>()};
-                tag.Posts.Add(post);
                 post.Tags.Add(tag);
             }
             postRepository.Save(post);
