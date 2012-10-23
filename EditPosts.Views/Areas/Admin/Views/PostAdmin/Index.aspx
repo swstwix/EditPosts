@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/AdminArea.Master"
          Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostAdminModel>" %>
 <%@ Import Namespace="EditPosts.Domain.Models" %>
 
@@ -40,9 +40,9 @@
                             <span>
                                 <% using (Html.BeginForm("Delete", "Post", new {id = post.Id}))
                                    { %>
-                                    <%= Html.ActionLink("View", "Details", "Post", new {id = post.Id},
+                                    <%= Html.ActionLink("View", "Details", "PostAdmin", new {id = post.Id},
                                         new {@class = "button"}) %>
-                                    <%= Html.ActionLink("Edit", "Edit", "Post",
+                                    <%= Html.ActionLink("Edit", "Edit", "PostAdmin",
                                         new {id = post.Id},
                                         new {@class = "button"}) %>
                                     <input type="submit" value="Delete" class="button" />

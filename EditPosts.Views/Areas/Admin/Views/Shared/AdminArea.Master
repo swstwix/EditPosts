@@ -21,7 +21,7 @@
         <div id="menu">
             <ul>
                 <li>
-                    <%= Html.ActionLink("Main page", "Index", "Post") %></li>
+                    <%= Html.ActionLink("Main page", "Index", "PostAdmin") %></li>
             </ul>
         </div>
         <div id="content">

@@ -30,7 +30,7 @@ namespace EditPosts.Views
             routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
-                new { controller = "Post", action = "Index", id = UrlParameter.Optional } // Parameter defaults
+                new { controller = "Post", action = "Index", id = UrlParameter.Optional } 
                 );
         }
 

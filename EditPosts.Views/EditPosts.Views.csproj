@@ -85,6 +85,8 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\PostAdminController.cs" />
     <Compile Include="Binders\PostEditViewModelBinder.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\TagController.cs" />
@@ -100,6 +102,9 @@
     <Content Include="App_Data\Database1_log.ldf">
       <DependentUpon>Database1.mdf</DependentUpon>
     </Content>
+    <Content Include="Areas\Admin\Views\PostAdmin\Index.aspx" />
+    <Content Include="Areas\Admin\Views\PostAdmin\Details.aspx" />
+    <Content Include="Areas\Admin\Views\PostAdmin\Edit.aspx" />
     <Content Include="Content\MasterPage.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -1076,8 +1081,6 @@
     <Content Include="Scripts\Tagit\index.themeroller.html" />
     <Content Include="Scripts\Tagit\js\tagit-themeroller.js" />
     <Content Include="Scripts\Tagit\js\tagit.js" />
-    <Content Include="Views\Post\Admin.aspx" />
-    <Content Include="Views\Post\Edit.aspx" />
     <Content Include="Views\Post\Index.aspx" />
     <Content Include="Views\Shared\Preview.ascx" />
     <Content Include="Views\Post\Details.aspx" />
@@ -1105,13 +1108,6 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="_bin_deployableAssemblies\Microsoft.Web.Infrastructure.dll" />
-    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Razor.dll" />
-    <None Include="_bin_deployableAssemblies\System.Web.WebPages.dll" />
-    <None Include="_bin_deployableAssemblies\System.Web.WebPages.Deployment.dll" />
-    <None Include="_bin_deployableAssemblies\System.Web.Razor.dll" />
-    <None Include="_bin_deployableAssemblies\System.Web.Helpers.dll" />
-    <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -1134,6 +1130,8 @@
     <Content Include="Views\Shared\MainContent.Master" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\Admin\Views\Shared\AdminArea.Master" />
     <None Include="Scripts\ckeditor\.htaccess" />
     <None Include="Scripts\ckeditor\ckeditor.pack" />
     <None Include="Scripts\ckeditor\ckeditor.php" />
@@ -1154,8 +1152,11 @@
     <None Include="Scripts\Tagit\demo\js\jquery-ui.1.8.20.min.js~" />
     <None Include="Scripts\Tagit\index.php" />
     <None Include="Scripts\Tagit\README.md" />
+    <Content Include="Views\Shared\AdminArea.Master.Master" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Models\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

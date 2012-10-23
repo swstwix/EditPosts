@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/AdminArea.Master"
          Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostDetailsModel>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
@@ -18,6 +18,8 @@
         <br />
     </div>
     <p>
+        <%: Html.ActionLink("Edit", "Edit", new {id = Model.Post.Id}, new {@class = "button"}) %>
+        |
         <%: Html.ActionLink("Back to List", "Index", new {}, new {@class = "button"}) %>
     </p>
     <div>
