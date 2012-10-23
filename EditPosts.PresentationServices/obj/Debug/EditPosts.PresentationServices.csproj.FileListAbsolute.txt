@@ -28,3 +28,18 @@ C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.Pres
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\obj\Debug\EditPosts.PresentationServices.dll
 C:\Users\f.demesh\Documents\Visual Studio 2010\Projects\EditPosts\EditPosts.PresentationServices\obj\Debug\EditPosts.PresentationServices.pdb
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.PresentationServices.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.PresentationServices.pdb
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.Db.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.Domain.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\FluentNHibernate.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\NHibernate.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\Iesi.Collections.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.Db.pdb
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\EditPosts.Domain.pdb
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\FluentNHibernate.xml
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\NHibernate.xml
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\bin\Debug\Iesi.Collections.xml
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\obj\Debug\EditPosts.PresentationServices.dll
+C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.PresentationServices\obj\Debug\EditPosts.PresentationServices.pdb
