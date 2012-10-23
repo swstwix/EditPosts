@@ -22,15 +22,5 @@ namespace EditPosts.Views.Controllers
         {
             return View(tagPresentationService.LoadTagCloudModel());
         }
-
-        public JsonResult TagsForAutocomplete(string term)
-        {
-            return Json(tagPresentationService.LoadTagNamesContains(term).Select(n => new
-                                                                                          {
-                                                                                              label = n,
-                                                                                              value = n,
-                                                                                          })
-                , JsonRequestBehavior.AllowGet);
-        }
     }
 }

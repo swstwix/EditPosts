@@ -30,7 +30,7 @@
                     })
                     .autocomplete({
                         source: function(request, response) {
-                            $.getJSON("<%= Url.Action("TagsForAutocomplete", "Tag") %>", {
+                            $.getJSON("<%= Url.Action("TagsForAutocomplete", "TagAdmin") %>", {
                                 term: extractLast(request.term)
                             }, response);
                         },

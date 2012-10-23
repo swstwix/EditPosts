@@ -87,6 +87,7 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\PostAdminController.cs" />
+    <Compile Include="Areas\Admin\Controllers\TagAdminController.cs" />
     <Compile Include="Binders\PostEditViewModelBinder.cs" />
     <Compile Include="Controllers\PostController.cs" />
     <Compile Include="Controllers\TagController.cs" />
@@ -1152,7 +1153,6 @@
     <None Include="Scripts\Tagit\demo\js\jquery-ui.1.8.20.min.js~" />
     <None Include="Scripts\Tagit\index.php" />
     <None Include="Scripts\Tagit\README.md" />
-    <Content Include="Views\Shared\AdminArea.Master.Master" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Admin\Models\" />

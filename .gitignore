@@ -6,6 +6,7 @@
 .project
 .metadata
 bin/
+obj/
 tmp/
 *.tmp
 *.bak
@@ -100,6 +101,7 @@ publish
 /[Bb]in
 /[Oo]bj
 sql
+*.suo
 TestResults
 *.Cache
 ClientBin

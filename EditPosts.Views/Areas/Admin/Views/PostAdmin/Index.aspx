@@ -38,7 +38,7 @@
                         </td>
                         <td>
                             <span>
-                                <% using (Html.BeginForm("Delete", "Post", new {id = post.Id}))
+                                <% using (Html.BeginForm("Delete", "PostAdmin", new {id = post.Id}))
                                    { %>
                                     <%= Html.ActionLink("View", "Details", "PostAdmin", new {id = post.Id},
                                         new {@class = "button"}) %>
