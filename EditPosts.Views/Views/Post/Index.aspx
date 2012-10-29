@@ -11,9 +11,8 @@
         <% foreach (PostPreviewModel post in Model.LatestPosts)
            {%>
             <% Html.RenderPartial("Preview", post); %>
-            <hr />
+            <br />
         <% } %>
-        <hr />
     </div>
     <div class="rightpanel">
         <%= Html.Action("TagCloud", "Tag") %>
