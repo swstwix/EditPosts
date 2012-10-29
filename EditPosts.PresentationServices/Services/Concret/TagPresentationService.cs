@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using EditPosts.PresentationServices.ViewModels.TagsModels;
 using EditPosts.PresentationServices.ViewModels.TagsModels.TagItem;
 

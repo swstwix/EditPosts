@@ -1,5 +1,5 @@
 using System.Linq;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using NHibernate;
 using NHibernate.Linq;
 

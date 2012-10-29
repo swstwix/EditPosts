@@ -17,8 +17,8 @@ namespace EditPosts.Db
                 if (config == null)
                     config =
                         Fluently.Configure().Database(
-                            MsSqlConfiguration.MsSql2008.ConnectionString(
-                                "Data Source=WD-SERVER-5;Persist Security Info=True;User ID=TestData;Password=TestData")).Mappings(
+                            MsSqlConfiguration.MsSql2008.ConnectionString(EditPosts.Db.Properties.Settings.Default.ConnectionString))
+                            .Mappings(
                                     m => m.FluentMappings.AddFromAssemblyOf<PostMap>()).
                             BuildConfiguration();
                 if (config == null)

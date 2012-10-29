@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using EditPosts.Domain.Models;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
 
 namespace EditPosts.PresentationServices.Services.Concret

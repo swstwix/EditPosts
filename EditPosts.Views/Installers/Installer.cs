@@ -3,7 +3,7 @@ using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using EditPosts.Db;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using EditPosts.PresentationServices.Services;
 using NHibernate;
 
@@ -17,15 +17,14 @@ namespace EditPosts.Views.Installers
         {
             container.Register(
                 AllTypes.FromAssemblyNamed("EditPosts.Db").BasedOn(typeof (IRepository)).WithServiceDefaultInterfaces().
-                    LifestyleTransient());
+                    LifestyleSingleton());
 
             container.Register(
-                Classes.FromThisAssembly().BasedOn<IRepository>().Configure(
-                    c => c.DependsOn(container.Resolve<ISession>())).LifestyleTransient());
+                Classes.FromThisAssembly().BasedOn<IRepository>().LifestyleSingleton());
 
             container.Register(AllTypes.FromAssemblyNamed("EditPosts.PresentationServices").
                                    BasedOn(typeof (IBasePresentationService)).WithServiceDefaultInterfaces
-                                   ().LifestyleTransient());
+                                   ().LifestyleSingleton());
 
             container.Register(Classes.FromThisAssembly().BasedOn<IController>().LifestyleTransient());
 
@@ -36,7 +35,7 @@ namespace EditPosts.Views.Installers
 
             container.Register(
                 Component.For<ISession>().UsingFactoryMethod(k => k.Resolve<ISessionFactory>().OpenSession()).
-                    LifestylePerWebRequest());
+                    LifestyleTransient());
         }
 
         #endregion

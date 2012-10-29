@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Text;
 using EditPosts.Domain.Models;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using NHibernate;
 
 namespace EditPosts.Db.Repositories
