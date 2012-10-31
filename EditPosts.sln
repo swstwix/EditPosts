@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Domain", "EditPosts.Domain\EditPosts.Domain.csproj", "{EBC6998D-CDC3-421F-AD02-14D4424CBAF6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Views", "EditPosts.Views\EditPosts.Views.csproj", "{C5D6393A-56B8-499E-B390-C73B0A823D6E}"
