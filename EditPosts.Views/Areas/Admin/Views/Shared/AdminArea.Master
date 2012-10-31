@@ -7,6 +7,7 @@
             <asp:ContentPlaceHolder ID="TitleContent" runat="server" />
         </title>
         <link type="text/css" rel="Stylesheet" href="<%= Url.Content("~/Content/MasterPage.css") %>" />
+        <link type="text/css" rel="stylesheet" href="<%= Url.Content("Content/bootstrap/css/bootstrap.css" ) %>" />
         <script src="<%= Url.Content("~/Scripts/MicrosoftAjax.debug.js") %>" type="text/javascript"> </script>
         <script src="<%= Url.Content("~/Scripts/MicrosoftMvcAjax.debug.js") %>" type="text/javascript"> </script>
         <script src="<%= Url.Content("~/Scripts/MicrosoftMvcValidation.debug.js") %>" type="text/javascript"> </script>
@@ -18,11 +19,15 @@
         <% Html.EnableClientValidation(true);%>
     </head>
     <body>
-        <div id="menu">
-            <ul>
-                <li>
-                    <%= Html.ActionLink("Main page", "Index", "PostAdmin") %></li>
-            </ul>
+        <div class="navbar">
+            <div class="navbar-inner">
+                <div class="brand">
+                    <%= Html.ActionLink("Edit posts", "Index", "Post", new { area="" }, new { })%>
+                </div>
+                <ul class="nav">
+                    <li class="active"> <%= Html.ActionLink("Main page", "Index", "Post") %> </li>
+                </ul>
+            </div>
         </div>
         <div id="content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
