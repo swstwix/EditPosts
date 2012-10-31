@@ -3,11 +3,7 @@
 <div id="xlistwarp">
     <h2>
         Tag cloud :</h2>
-    <fieldset>
-        <legend>
-            <h4>
-                Tag with hit rating :</h4>
-        </legend>
+    <div class="well">
         <ul id="xlist">
             <% foreach (TagCloudItemModel tag in Model.AllTags)
                { %>
@@ -18,7 +14,7 @@
             <%
                }%>
         </ul>
-    </fieldset>
+    </div>
 </div>
 <script src='<%= Url.Content(@"../../Scripts/jquery-1.5.1.min.js") %>' type="text/javascript"> </script>
 <script src='<%= Url.Content(@"../../Scripts/jquery.tinysort.min.js") %>' type="text/javascript"> </script>
@@ -26,4 +22,3 @@
 <script>
     $("#xlist").tagcloud({ colormin: "d88", colormax: "d08", type: "list", sizemin: 20, sizemax: 40 });
 </script>
-<hr />

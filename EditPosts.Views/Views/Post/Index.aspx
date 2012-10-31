@@ -5,7 +5,7 @@
     Main Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="leftpanel">
+    <div class="span6">
         <h2>
             Latest Post :</h2>
         <% foreach (PostPreviewModel post in Model.LatestPosts)
@@ -14,7 +14,7 @@
             <br />
         <% } %>
     </div>
-    <div class="rightpanel">
+    <div class="span6">
         <%= Html.Action("TagCloud", "Tag") %>
     </div>
 </asp:Content>
