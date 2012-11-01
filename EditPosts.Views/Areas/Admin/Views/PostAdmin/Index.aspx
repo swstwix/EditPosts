@@ -13,7 +13,7 @@
                     <th>Name :</th>
                     <th>Post date :</th>
                     <th>Hit count :</th>
-                    <th style="width:15%;">Actions :</th>
+                    <th style="width:13.5%;">Actions :</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,10 +30,8 @@
                             <%= post.HitCount %>
                         </td>
                         <td>
-                            <div class="pull-right">
-                                <%= Html.ActionLink("View", "Details", "PostAdmin", new {id = post.Id},new {@class = "btn"}) %>
-                                <%= Html.ActionLink("Edit", "Edit", "PostAdmin",new {id = post.Id},new {@class = "btn"}) %>
-                            </div>
+                            <%= Html.ActionLink("View", "Details", "PostAdmin", new {id = post.Id},new {@class = "btn btn-primary"}) %>
+                            <%= Html.ActionLink("Edit", "Edit", "PostAdmin",new {id = post.Id},new {@class = "btn btn-primary"}) %>
                         </td>
                     </tr>
                 <% } %>
