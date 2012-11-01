@@ -28,7 +28,7 @@
                 </ul>
             </div>
         </div>
-        <div id="content" class="container">
+        <div id="content">
             <div class="row">
                 <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
             </div>
