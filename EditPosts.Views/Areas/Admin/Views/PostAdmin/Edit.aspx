@@ -61,7 +61,7 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row-fluid span12">
+    <div>
         <div class="well">
             <h2>
                 <%= ViewData.GetViewDataInfo("oldName").Value %>

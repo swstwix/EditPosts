@@ -2,6 +2,6 @@
 <%@ Import Namespace="EditPosts.PresentationServices.Utils.Extensions" %>
 <div class="well">
     <h4><%= Model.Name %></h4>
-    <p><%= Model.Body.AsHtmlPreview(300) %></p>
     <%: Html.ActionLink("View", "Details", "Post", new {id = Model.PostId}, new {@class = "btn pull-right btn-primary"}) %>
+    <p><%= Model.Body.AsHtmlPreview(300) %></p>
 </div>

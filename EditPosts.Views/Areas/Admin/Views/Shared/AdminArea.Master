@@ -28,9 +28,10 @@
                 </ul>
             </div>
         </div>
-        <div id="content">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server">
-            </asp:ContentPlaceHolder>
+        <div id="content" class="container">
+            <div class="row">
+                <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+            </div>
         </div>
     </body>
 </html>
