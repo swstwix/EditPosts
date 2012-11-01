@@ -5,8 +5,8 @@
     <%= Model.Post.Name %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row-fluid">
-        <div class="well span12">
+    <div class="row">
+        <div class="well">
             <h2>
                 <%= Model.Post.Name %></h2>
             <div>
@@ -21,7 +21,7 @@
             </div>
             <%: Html.ActionLink("Back to List", "Index", new {}, new {@class = "btn btn-primary"}) %>
         </div>
-        <div class="well span12">
+        <div class="well">
             <%= Model.Post.Body %>
         </div>
     </div>
