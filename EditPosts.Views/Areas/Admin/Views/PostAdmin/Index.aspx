@@ -6,22 +6,15 @@
     Admin
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="post_table">
-        <table>
-            <caption>
-                All Posts</caption>
+    <div class="span12">
+        <table class="table table-striped table-bordered">
             <thead>
-                <th>
-                    Name :
-                </th>
-                <th>
-                    Post date :
-                </th>
-                <th>
-                    Hit count :
-                </th>
-                <th>
-                </th>
+                <tr>
+                    <th>Name :</th>
+                    <th>Post date :</th>
+                    <th>Hit count :</th>
+                    <th style="width:15%;">Actions :</th>
+                </tr>
             </thead>
             <tbody>
                 <% foreach (Post post in Model.Posts)
@@ -37,21 +30,15 @@
                             <%= post.HitCount %>
                         </td>
                         <td>
-                            <span>
-                                <% using (Html.BeginForm("Delete", "PostAdmin", new {id = post.Id}))
-                                   { %>
-                                    <%= Html.ActionLink("View", "Details", "PostAdmin", new {id = post.Id},
-                                        new {@class = "button"}) %>
-                                    <%= Html.ActionLink("Edit", "Edit", "PostAdmin",
-                                        new {id = post.Id},
-                                        new {@class = "button"}) %>
-                                    <input type="submit" value="Delete" class="button" />
-                                <% } %></span>
+                            <div class="pull-right">
+                                <%= Html.ActionLink("View", "Details", "PostAdmin", new {id = post.Id},new {@class = "btn"}) %>
+                                <%= Html.ActionLink("Edit", "Edit", "PostAdmin",new {id = post.Id},new {@class = "btn"}) %>
+                            </div>
                         </td>
                     </tr>
                 <% } %>
             </tbody>
         </table>
-        <%= Html.ActionLink("Create", "Create", "Post", new {@class = "button"}) %>
+        <%= Html.ActionLink("Create", "Create", "Post", new {@class = "btn btn-large btn-primary"}) %>
     </div>
 </asp:Content>
