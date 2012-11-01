@@ -5,7 +5,7 @@ using NHibernate.Linq;
 
 namespace EditPosts.Db.Repositories
 {
-    public class EntityRepository<T> : IEntityRepository<T> where T : class
+    public class EntityRepository<T> : IEntityRepository<T>
     {
         protected readonly ISession Session;
 
