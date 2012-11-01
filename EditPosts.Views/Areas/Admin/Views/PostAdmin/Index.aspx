@@ -8,6 +8,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     
     <div class="span12">
+        <h2>All posts</h2>
         <table class="table table-striped well">
             <thead>
                 <tr>
@@ -40,6 +41,6 @@
         </table>
 
         <%= Html.ActionLink("Create", "Create", "Post", new {@class = "btn btn-large btn-primary"}) %>
-    </div>
+    </div class="span12">
     
 </asp:Content>
