@@ -5,7 +5,7 @@
     <%= Model.Post.Name %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="row">
+    <div class="row-fluid">
         <div class="well span12">
             <h2>
                 <%= Model.Post.Name %></h2>

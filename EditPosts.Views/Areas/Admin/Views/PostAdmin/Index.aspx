@@ -6,14 +6,14 @@
     Admin
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="span12">
+    <div class="row-fluid span12">
         <table class="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th>Name :</th>
                     <th>Post date :</th>
                     <th>Hit count :</th>
-                    <th style="width:13.5%;">Actions :</th>
+                    <th style="width:110px;">Actions :</th>
                 </tr>
             </thead>
             <tbody>
