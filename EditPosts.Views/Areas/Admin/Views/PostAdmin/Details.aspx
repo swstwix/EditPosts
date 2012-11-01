@@ -15,9 +15,9 @@
                 <div>
                     Date created :<%= Model.Post.PostDate %>
                 </div>
-                <div>
+                <div class="btn-group">
                     <%: Html.ActionLink("Edit", "Edit", new {id = Model.Post.Id}, new {@class = "btn btn-primary"}) %>
-                    <%: Html.ActionLink("Back to List", "Index", new {}, new {@class = "btn"}) %>
+                    <%: Html.ActionLink("Back to List", "Index", new {}, new {@class = "btn btn-primary"}) %>
                 </div>
             </div>
         
