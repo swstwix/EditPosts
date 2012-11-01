@@ -7,8 +7,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="span6">
-            <h2>
-                Latest Post :</h2>
+            <h2>Latest Post :</h2>
             <% foreach (PostPreviewModel post in Model.LatestPosts)
                {%>
                 <% Html.RenderPartial("Preview", post); %>
@@ -16,7 +15,7 @@
             <% } %>
         </div>
         <div class="span6">
-            <%= Html.Action("TagCloud", "Tag") %>
+            <% Html.RenderAction("TagCloud", "Tag"); %>
         </div>
     </div>
 

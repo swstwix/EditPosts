@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" Inherits="System.Web.Mvc.ViewUserControl<EditPosts.PresentationServices.ViewModels.TagsModels.TagCloudModel>" %>
 <%@ Import Namespace="EditPosts.PresentationServices.ViewModels.TagsModels.TagItem" %>
 <div id="xlistwarp">
-    <%--<h2>
+    <h2>
         Tag cloud :</h2>
     <div class="well">
         <ul id="xlist">
@@ -14,7 +14,7 @@
             <%
                }%>
         </ul>
-    </div>--%>
+    </div>
     <%--TODO: fix problem with saving--%>
 </div>
 <script src='<%= Url.Content(@"../../Scripts/jquery-1.5.1.min.js") %>' type="text/javascript"> </script>

@@ -1,11 +1,13 @@
 using System.Linq;
 using EditPosts.Domain.Repositories;
+using System.Collections;
+using System.Collections.Generic;
 using NHibernate;
 using NHibernate.Linq;
 
 namespace EditPosts.Db.Repositories
 {
-    public class EntityRepository<T> : IEntityRepository<T>
+    public class EntityRepository<T> : IEntityRepository<T> where T : class
     {
         protected readonly ISession Session;
 
@@ -18,7 +20,7 @@ namespace EditPosts.Db.Repositories
 
         public IQueryable<T> All()
         {
-            return Query();
+            return Session.Query<T>();
         }
 
         public void Delete(T entity)
@@ -43,11 +45,6 @@ namespace EditPosts.Db.Repositories
             {
                 return default(T);
             }
-        }
-
-        public IQueryable<T> Query()
-        {
-            return Session.Query<T>();
         }
 
         public void Save(T entity)

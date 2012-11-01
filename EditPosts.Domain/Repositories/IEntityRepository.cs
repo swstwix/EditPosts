@@ -1,4 +1,6 @@
 using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace EditPosts.Domain.Repositories
 {
@@ -8,7 +10,6 @@ namespace EditPosts.Domain.Repositories
         void Delete(T entity);
         void Delete(int id);
         T Get(int id);
-        IQueryable<T> Query();
         void Save(T entity);
         void Update(T entity);
     }

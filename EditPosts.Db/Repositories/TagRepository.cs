@@ -19,15 +19,15 @@ namespace EditPosts.Db.Repositories
         {
             var builder2 = new StringBuilder();
 
-            foreach (Tag tag in All())
-                builder2.AppendFormat("\"{0}\",", tag.Name);
+            foreach (var name in All().Select(x => x.Name).ToList<string>())
+                builder2.AppendFormat("\"{0}\",", name);
 
             return builder2.ToString();
         }
 
         public void DeleteUnusedTags()
         {
-            foreach (var tag in Query().Where(t => !t.Posts.Any()))
+            foreach (var tag in All().Where(t => !t.Posts.Any()))
             {
                 Delete(tag);
             }
@@ -37,7 +37,7 @@ namespace EditPosts.Db.Repositories
         {
             try
             {
-                return Query().Single(t => t.Name.Equals(name));
+                return All().Single(t => t.Name.Equals(name));
             }
             catch
             {

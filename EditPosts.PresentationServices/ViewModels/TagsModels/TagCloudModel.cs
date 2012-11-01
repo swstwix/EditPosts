@@ -6,6 +6,11 @@ namespace EditPosts.PresentationServices.ViewModels.TagsModels
 {
     public class TagCloudModel
     {
-        public IEnumerable<TagCloudItemModel> AllTags { get; set; }
+        public TagCloudModel(IEnumerable<TagCloudItemModel> allTags)
+        {
+            AllTags = allTags;
+        }
+
+        public IEnumerable<TagCloudItemModel> AllTags { get; private set; }
     }
 }

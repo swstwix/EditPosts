@@ -5,24 +5,24 @@
     <%= Model.Post.Name %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="well">
-        <h2>
-            <%= Model.Post.Name %></h2>
-        <div>
-            Hit count :
-            <%= Model.Post.HitCount %>
+    <div class="row">
+        <div class="well span12">
+            <h2>
+                <%= Model.Post.Name %></h2>
+            <div>
+                Hit count :
+                <%= Model.Post.HitCount %>
+            </div>
+            <div>
+                Date created :
+                <%= Model.Post.PostDate %>
+                <br />
+                <br />
+            </div>
+            <%: Html.ActionLink("Back to List", "Index", new {}, new {@class = "btn btn-primary"}) %>
         </div>
-        <div>
-            Date created :
-            <%= Model.Post.PostDate %>
-            <br />
-            <br />
+        <div class="well span12">
+            <%= Model.Post.Body %>
         </div>
     </div>
-    <div class="well">
-        <%= Model.Post.Body %>
-    </div>
-    <p>
-        <%: Html.ActionLink("Back to List", "Index", new {}, new {@class = "btn btn-primary"}) %>
-    </p>
 </asp:Content>

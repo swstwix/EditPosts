@@ -29,7 +29,7 @@ namespace EditPosts.PresentationServices.Services.Concret
 
         public PostAdminModel LoadPostAdminModel()
         {
-            return new PostAdminModel { Posts = postRepository.Query() };
+            return new PostAdminModel { Posts = postRepository.All() };
         }
 
         public PostDetailsModel LoadPostDetailsViewModel(int id)
