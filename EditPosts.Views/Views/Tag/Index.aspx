@@ -5,24 +5,18 @@
     <%= Model.Tag.Name %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="leftpanel">
-        <h2>
-            Posts with
-            <%= Model.Tag.Name %>
-            :</h2>
+    <div class="span6">
+        <h2>Posts with <%= Model.Tag.Name %>:</h2>
         <% foreach (Post post in Model.Tag.Posts)
            {%>
-            <fieldset>
-                <legend>
-                    <h4>
-                        <%= post.Name %></h4>
-                </legend>
+              <div class="well">
+                <h4><%= post.Name %></h4>
                 <%= post.Body %>
                 <%= Html.ActionLink("View", "Details", "Post", new {id = post.Id}, new {@class = "button"}) %>
-            </fieldset>
+              </div>
         <% } %>
     </div>
-    <div class="rightpanel">
+    <div class="span6">
         <%= Html.Action("TagCloud", "Tag") %>
     </div>
 </asp:Content>

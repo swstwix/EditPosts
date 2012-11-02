@@ -61,58 +61,63 @@
 </asp:Content>
 
 <asp:Content ID="Content3" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="span12">
+        <div class="well">
+            <h2>
+                <%= ViewData.GetViewDataInfo("oldName").Value %>
+            </h2>
 
-    <h2>
-        <%= ViewData.GetViewDataInfo("oldName").Value %>
-    </h2>
+            <div>
+                Hit counts: <%: Html.DisplayFor(model => model.HitCount) %>
+            </div>
 
-    <% using (Html.BeginForm())
-       {%>
-        <%: Html.ValidationSummary(true) %>
+            <div>
+                Date: <%: Html.DisplayFor(model => model.Date) %>
+            </div>
 
-        <div>
-            <%: Html.LabelFor(model => model.HitCount) %> :
-            <%: Html.DisplayFor(model => model.HitCount) %>
+            <div>
+                <br />
+                <%: Html.ActionLink("Back to List", "Index", new { }, new { @class="btn btn-primary" })%>
+            </div>
+
         </div>
 
-        <div>
-            <%: Html.LabelFor(model => model.Date) %> :
-            <%: Html.DisplayFor(model => model.Date) %>
-        </div>
-            
-        <hr/>
+        <div class="well">
+            <% using (Html.BeginForm())
+               {%>
+            <%: Html.ValidationSummary(true) %>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Name) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Name) %>
-            <%: Html.ValidationMessageFor(model => model.Name) %>
-        </div>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Name) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.Name) %>
+                <%: Html.ValidationMessageFor(model => model.Name) %>
+            </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Tags) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.EditorFor(model => model.Tags) %>
-            <%: Html.ValidationMessageFor(model => model.Tags) %>
-        </div>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Tags) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.EditorFor(model => model.Tags) %>
+                <%: Html.ValidationMessageFor(model => model.Tags) %>
+            </div>
 
-        <div class="editor-label">
-            <%: Html.LabelFor(model => model.Body) %>
-        </div>
-        <div class="editor-field">
-            <%: Html.TextAreaFor(model => model.Body, new {@class = "ckeditor"}) %>
-            <%: Html.ValidationMessageFor(model => model.Body) %>
-        </div>
+            <div class="editor-label">
+                <%: Html.LabelFor(model => model.Body) %>
+            </div>
+            <div class="editor-field">
+                <%: Html.TextAreaFor(model => model.Body, new {@class = "ckeditor"}) %>
+                <%: Html.ValidationMessageFor(model => model.Body) %>
+            </div>
 
-        <p>
-            <input type="submit" value="Save" class="button"/>
-        </p>
-    <% } %>
-
-    <div>
-        <%: Html.ActionLink("Back to List", "Index") %>
+            <div>
+                <br />
+                <input type="submit" value="Save" class="btn btn-large btn-primary" />
+            </div>
+            <% } %>
+        </div>
     </div>
+
 
 </asp:Content>

@@ -18,7 +18,7 @@ namespace EditPosts.Db.Repositories
 
         public IQueryable<T> All()
         {
-            return Query();
+            return Session.Query<T>();
         }
 
         public void Delete(T entity)
@@ -43,11 +43,6 @@ namespace EditPosts.Db.Repositories
             {
                 return default(T);
             }
-        }
-
-        public IQueryable<T> Query()
-        {
-            return Session.Query<T>();
         }
 
         public void Save(T entity)

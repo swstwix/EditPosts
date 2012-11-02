@@ -7,8 +7,14 @@ namespace EditPosts.PresentationServices.ViewModels.TagsModels.TagItem
 {
     public class TagCloudItemModel
     {
-        public string Name;
+        public TagCloudItemModel(string name, int rating)
+        {
+            Name = name;
+            Rating = rating;
+        }
 
-        public int Rating;
+        public string Name { get; private set; }
+
+        public int Rating { get; private set; }
     }
 }
