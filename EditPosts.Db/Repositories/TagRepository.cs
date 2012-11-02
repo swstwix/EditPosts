@@ -36,8 +36,7 @@ namespace EditPosts.Db.Repositories
         public Tag Get(string name)
         {
             // fuck you, nhibernate !!
-            var id = All().Where(x => x.Name == name).SingleOrDefault().Id;
-            return Get(id);
+            return All().Where(x => x.Name == name).SingleOrDefault();
         }
 
         #endregion
