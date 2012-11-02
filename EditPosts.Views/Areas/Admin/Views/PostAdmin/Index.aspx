@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Areas/Admin/Views/Shared/AdminArea.Master"
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/MainContent.Master"
          Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.PostsModels.PostAdminModel>" %>
 <%@ Import Namespace="EditPosts.Domain.Models" %>
 

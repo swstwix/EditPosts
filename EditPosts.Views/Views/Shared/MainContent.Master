@@ -15,11 +15,9 @@
         <% Html.EnableClientValidation(true);%>
     </head>
     <body>
-        <div class="navbar">
+        <div class="navbar navbar-inverse">
             <div class="navbar-inner">
-                <div class="brand">
-                    <%= Html.ActionLink("Post Editor", "Index", "Post") %>
-                </div>
+                <%= Html.ActionLink("Post Editor", "Index", "Post", new { @class="brand" })%>
                 <ul class="nav">
                     <li class="active"> <%= Html.ActionLink("Front End", "Index", "Post", new { area="" }, new { }) %> </li>
                     <li><%= Html.ActionLink("Admin", "Index", "PostAdmin", new { area="Admin" }, new { }) %></li>
