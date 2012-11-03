@@ -34,8 +34,8 @@ namespace EditPosts.Views.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var x = string.Format("{0}", (string) null);
-            return View(postPresentationService.LoadPostIndexModel());
+            //return View(postPresentationService.LoadPostIndexModel());
+            return Json(new { name = "Hello world!" }, JsonRequestBehavior.AllowGet);
         }
     }
 }
