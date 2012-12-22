@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using EditPosts.Domain.Models;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
 
 namespace EditPosts.PresentationServices.Services.Concret
@@ -29,7 +29,7 @@ namespace EditPosts.PresentationServices.Services.Concret
 
         public PostAdminModel LoadPostAdminModel()
         {
-            return new PostAdminModel { Posts = postRepository.Query() };
+            return new PostAdminModel { Posts = postRepository.All() };
         }
 
         public PostDetailsModel LoadPostDetailsViewModel(int id)
@@ -88,7 +88,7 @@ namespace EditPosts.PresentationServices.Services.Concret
             post.Name = postEditViewModel.Name;
             post.Body = postEditViewModel.Body;
             post.Tags.Clear();
-            postEditViewModel.Tags = postEditViewModel.Tags ?? string.Empty;
+            postEditViewModel.Tags = postEditViewModel.Tags ?? string.Empty; 
             var tagNames = postEditViewModel.Tags.Split(',').Select(s => s.Replace(" ", string.Empty)).Where(s => !string.IsNullOrWhiteSpace(s));
             foreach (string tagName in tagNames)
             {

@@ -5,17 +5,16 @@
     Main Page
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    <div class="leftpanel">
-        <h2>
-            Latest Post :</h2>
-        <% foreach (PostPreviewModel post in Model.LatestPosts)
-           {%>
-            <% Html.RenderPartial("Preview", post); %>
-            <hr />
-        <% } %>
-        <hr />
-    </div>
-    <div class="rightpanel">
-        <%= Html.Action("TagCloud", "Tag") %>
-    </div>
+        <div class="span6">
+            <h2>Latest Post :</h2>
+            <% foreach (PostPreviewModel post in Model.LatestPosts)
+               {%>
+                <% Html.RenderPartial("Preview", post); %>
+                <br />
+            <% } %>
+        </div>
+        <div class="span6">
+            <% Html.RenderAction("TagCloud", "Tag"); %>
+        </div>
+
 </asp:Content>

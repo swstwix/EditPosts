@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using EditPosts.Domain.Models;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using NHibernate;
 
 namespace EditPosts.Db.Repositories
@@ -17,12 +17,12 @@ namespace EditPosts.Db.Repositories
 
         public IEnumerable<Post> LatestPosts
         {
-            get { return Query().OrderByDescending(p => p.PostDate).Take(5); }
+            get { return All().OrderByDescending(p => p.PostDate).Take(5).ToList<Post>(); }
         }
 
         public IEnumerable<Post> MostPopularPosts
         {
-            get { return Query().OrderByDescending(p => p.HitCount).Take(3); }
+            get { return All().OrderByDescending(p => p.HitCount).Take(3).ToList<Post>(); }
         }
 
         public void IncHitCount(int postId)

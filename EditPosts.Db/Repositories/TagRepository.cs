@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Text;
 using EditPosts.Domain.Models;
-using EditPosts.Domain.Services;
+using EditPosts.Domain.Repositories;
 using NHibernate;
 
 namespace EditPosts.Db.Repositories
@@ -19,15 +19,15 @@ namespace EditPosts.Db.Repositories
         {
             var builder2 = new StringBuilder();
 
-            foreach (Tag tag in All())
-                builder2.AppendFormat("\"{0}\",", tag.Name);
+            foreach (var name in All().Select(x => x.Name).ToList<string>())
+                builder2.AppendFormat("\"{0}\",", name);
 
             return builder2.ToString();
         }
 
         public void DeleteUnusedTags()
         {
-            foreach (var tag in Query().Where(t => !t.Posts.Any()))
+            foreach (var tag in All().Where(t => !t.Posts.Any()))
             {
                 Delete(tag);
             }
@@ -35,14 +35,8 @@ namespace EditPosts.Db.Repositories
 
         public Tag Get(string name)
         {
-            try
-            {
-                return Query().Single(t => t.Name.Equals(name));
-            }
-            catch
-            {
-                return default(Tag);
-            }
+            // fuck you, nhibernate !!
+            return All().Where(x => x.Name == name).SingleOrDefault();
         }
 
         #endregion
