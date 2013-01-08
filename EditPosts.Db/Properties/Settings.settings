@@ -1,9 +1,0 @@
-﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EditPosts.Db.Properties" GeneratedClassName="Settings">
-  <Profiles />
-  <Settings>
-    <Setting Name="ConnectionString" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">Server=2dfe09d6-a13c-43a6-b9b3-a0fe0152b510.sqlserver.sequelizer.com;Database=db2dfe09d6a13c43a6b9b3a0fe0152b510;User ID=qfydzrvnsncmntkc;Password=7JXa4okw2jVVMEDk5tyZA85xNMRSbWfkpQ86q52ybKqU3cZnd5FmuFM7NzupEAud;</Value>
-    </Setting>
-  </Settings>
-</SettingsFile>

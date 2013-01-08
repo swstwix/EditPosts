@@ -10,22 +10,18 @@ namespace EditPosts.Db
     {
         private static Configuration config;
 
-        public static Configuration Configuration
+        public static Configuration Configuration(string connectionString)
         {
-            get
-            {
-                if (config == null)
-                    config =
-                        Fluently.Configure().Database(
-                            MsSqlConfiguration.MsSql2008.ConnectionString(EditPosts.Db.Properties.Settings.Default.ConnectionString))
-                            .Mappings(
-                                    m => m.FluentMappings.AddFromAssemblyOf<PostMap>()).
-                            BuildConfiguration();
-                if (config == null)
-                    throw new InvalidOperationException("NHibernate configuration is null");
-                return config;
-            }
-            set { throw new NotImplementedException(); }
+            if (config == null)
+                config =
+                    Fluently.Configure().Database(
+                        MsSqlConfiguration.MsSql2008.ConnectionString(connectionString))
+                        .Mappings(
+                                m => m.FluentMappings.AddFromAssemblyOf<PostMap>()).
+                        BuildConfiguration();
+            if (config == null)
+                throw new InvalidOperationException("NHibernate configuration is null");
+            return config;
         }
     }
 }

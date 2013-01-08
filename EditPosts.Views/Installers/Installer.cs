@@ -31,7 +31,7 @@ namespace EditPosts.Views.Installers
 
             container.Register(
                 Component.For<ISessionFactory>().UsingFactoryMethod(
-                    x => DbConfig.Configuration.BuildSessionFactory()).
+                    x => DbConfig.Configuration(System.Web.Configuration.WebConfigurationManager.ConnectionStrings["Posts"].ConnectionString).BuildSessionFactory()).
                     LifestyleSingleton());
 
             container.Register(
