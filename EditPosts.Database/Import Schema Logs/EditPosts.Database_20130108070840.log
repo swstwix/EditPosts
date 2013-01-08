@@ -1,0 +1,71 @@
+08.01.2013 22:08:40	This log contains information about the import schema operation into project 'EditPosts.Database' on computer 'DEMESHF' by user 'f.demesh'.
+08.01.2013 22:08:41	Import of database schema has started.
+08.01.2013 22:08:51	Gathering database options
+08.01.2013 22:08:51	Gathering users
+08.01.2013 22:08:51	Gathering roles
+08.01.2013 22:08:51	Gathering application roles
+08.01.2013 22:08:51	Gathering role memberships
+08.01.2013 22:08:51	Gathering filegroups
+08.01.2013 22:08:51	Gathering full-text catalogs
+08.01.2013 22:08:51	Gathering assemblies
+08.01.2013 22:08:51	Gathering certificates
+08.01.2013 22:08:51	Gathering asymmetric keys
+08.01.2013 22:08:51	Gathering symmetric keys
+08.01.2013 22:08:51	Gathering encrypted symmetric keys
+08.01.2013 22:08:51	Gathering schemas
+08.01.2013 22:08:51	Gathering XML schema collections
+08.01.2013 22:08:51	Gathering user-defined data types
+08.01.2013 22:08:51	Gathering user-defined types
+08.01.2013 22:08:51	Gathering table types
+08.01.2013 22:08:51	Gathering unique keys for table types
+08.01.2013 22:08:51	Gathering primary keys for table types
+08.01.2013 22:08:51	Gathering check constraints for table types
+08.01.2013 22:08:51	Gathering default constraints for table types
+08.01.2013 22:08:51	Gathering partition functions
+08.01.2013 22:08:51	Gathering partition schemes
+08.01.2013 22:08:51	Gathering functions
+08.01.2013 22:08:51	Gathering encrypted functions
+08.01.2013 22:08:51	Gathering aggregates
+08.01.2013 22:08:51	Gathering procedures
+08.01.2013 22:08:51	Gathering encrypted procedures
+08.01.2013 22:08:51	Gathering tables
+08.01.2013 22:08:51	Gathering primary keys
+08.01.2013 22:08:51	Gathering unique constraints
+08.01.2013 22:08:51	Gathering foreign keys
+08.01.2013 22:08:51	Gathering default constraints
+08.01.2013 22:08:51	Gathering check constraints
+08.01.2013 22:08:51	Gathering views
+08.01.2013 22:08:51	Gathering encrypted views
+08.01.2013 22:08:51	Gathering indexes
+08.01.2013 22:08:51	Gathering statistics
+08.01.2013 22:08:51	Gathering full-text index stoplists
+08.01.2013 22:08:51	Gathering full-text indexes
+08.01.2013 22:08:51	Gathering spatial indexes
+08.01.2013 22:08:51	Gathering XML indexes
+08.01.2013 22:08:51	Gathering encrypted triggers
+08.01.2013 22:08:51	Gathering triggers
+08.01.2013 22:08:51	Gathering encrypted and clr ddl triggers
+08.01.2013 22:08:51	Gathering ddl triggers
+08.01.2013 22:08:51	Gathering synonyms
+08.01.2013 22:08:51	Gathering defaults
+08.01.2013 22:08:51	Gathering data constraint uddt bindings
+08.01.2013 22:08:51	Gathering rules
+08.01.2013 22:08:51	Gathering data constraint uddt bindings
+08.01.2013 22:08:51	Gathering message types
+08.01.2013 22:08:51	Gathering queues
+08.01.2013 22:08:51	Gathering contracts
+08.01.2013 22:08:51	Gathering services
+08.01.2013 22:08:51	Gathering event notifications
+08.01.2013 22:08:51	Gathering remote service bindings
+08.01.2013 22:08:51	Gathering broker priorities
+08.01.2013 22:08:51	Gathering signatures
+08.01.2013 22:08:51	Gathering data compression options
+08.01.2013 22:08:51	Gathering extended properties
+08.01.2013 22:08:52	Gathering credentials
+08.01.2013 22:08:52	Gathering logins
+08.01.2013 22:08:52	Gathering server audits
+08.01.2013 22:08:53	Scanning project for duplicate elements
+08.01.2013 22:08:54	Finished duplicate element processing
+08.01.2013 22:08:54	Finished importing database.
+08.01.2013 22:08:54	A summary of the import was saved to the following location: C:\Users\f.demesh\Documents\GitHub\EditPosts\EditPosts.Database\Import Schema Logs\EditPosts.Database_20130108070840.log
+08.01.2013 22:08:54	Click Finish to continue...
