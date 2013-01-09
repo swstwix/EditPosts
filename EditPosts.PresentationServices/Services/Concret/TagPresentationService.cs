@@ -21,14 +21,14 @@ namespace EditPosts.PresentationServices.Services.Concret
         public TagCloudModel LoadTagCloudModel()
         {
             return new TagCloudModel (
-                                        tagRepository.All().ToList<Tag>().Select
+                                        tagRepository.AllTags().Select
                                         (t => new TagCloudItemModel(t.Name, t.Posts.Sum(p => p.HitCount)))
                                      );
         }
 
         public IEnumerable<string> LoadTagNamesContains(string term)
         {
-            return tagRepository.All().Select(t => t.Name).Where(n => n.Contains(term));
+            return tagRepository.LoadTagsNamesContails(term);
         }
 
         public TagIndexModel LoadTagIndexModel(string name)

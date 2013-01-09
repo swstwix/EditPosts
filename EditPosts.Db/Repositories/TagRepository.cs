@@ -3,6 +3,7 @@ using System.Text;
 using EditPosts.Domain.Models;
 using EditPosts.Domain.Repositories;
 using NHibernate;
+using System.Collections.Generic;
 
 namespace EditPosts.Db.Repositories
 {
@@ -39,6 +40,16 @@ namespace EditPosts.Db.Repositories
             return All().Where(x => x.Name == name).SingleOrDefault();
         }
 
+        public IEnumerable<Tag> AllTags() {
+            return All().AsEnumerable<Tag>();
+        }
+
         #endregion
+
+
+        public IEnumerable<string> LoadTagsNamesContails(string term)
+        {
+            return All().Select(t => t.Name).Where(n => n.Contains(term));
+        }
     }
 }

@@ -35,5 +35,11 @@ namespace EditPosts.Db.Repositories
         }
 
         #endregion
+
+
+        public IEnumerable<Post> AllPosts()
+        {
+            return All().AsEnumerable<Post>();
+        }
     }
 }
