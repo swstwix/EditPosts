@@ -9,8 +9,6 @@ namespace EditPosts.Domain.Models
 
         public virtual string Name { get; set; }
 
-        public virtual ICollection<Post> Posts { get; set; }
-
         public override int GetHashCode()
         {
             return string.Concat("Tag", Name).GetHashCode();

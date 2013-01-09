@@ -2,17 +2,17 @@
          Inherits="System.Web.Mvc.ViewPage<EditPosts.PresentationServices.ViewModels.TagsModels.TagIndexModel>" %>
 <%@ Import Namespace="EditPosts.Domain.Models" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-    <%= Model.Tag.Name %>
+    <%= Model.TagName %>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div class="span6">
-        <h2>Posts with <%= Model.Tag.Name %>:</h2>
-        <% foreach (Post post in Model.Tag.Posts)
+        <h2>Posts with <%= Model.TagName %>:</h2>
+        <% foreach (var post in Model.PostItem)
            {%>
               <div class="well">
                 <h4><%= post.Name %></h4>
                 <%= post.Body %>
-                <%= Html.ActionLink("View", "Details", "Post", new {id = post.Id}, new {@class = "button"}) %>
+                <%= Html.ActionLink("View", "Details", "Post", new {id = post.PostId}, new {@class = "button"}) %>
               </div>
         <% } %>
     </div>

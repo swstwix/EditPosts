@@ -28,10 +28,6 @@ namespace EditPosts.Db.Repositories
 
         public void DeleteUnusedTags()
         {
-            foreach (var tag in All().Where(t => !t.Posts.Any()))
-            {
-                Delete(tag);
-            }
         }
 
         public Tag Get(string name)

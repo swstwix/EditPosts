@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Domain", "EditPos
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Views", "EditPosts.Views\EditPosts.Views.csproj", "{C5D6393A-56B8-499E-B390-C73B0A823D6E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.Db", "EditPosts.Db\EditPosts.Db.csproj", "{F27A341B-7789-4083-8518-C7628142B386}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EditPosts.PresentationServices", "EditPosts.PresentationServices\EditPosts.PresentationServices.csproj", "{9019F2B5-B897-482D-B442-2A48D23BE3E1}"
 	ProjectSection(ProjectDependencies) = postProject
 		{E928FC00-1AEB-4C49-B160-D1BC40AB63AB} = {E928FC00-1AEB-4C49-B160-D1BC40AB63AB}
@@ -30,10 +28,6 @@ Global
 		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5D6393A-56B8-499E-B390-C73B0A823D6E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F27A341B-7789-4083-8518-C7628142B386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F27A341B-7789-4083-8518-C7628142B386}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F27A341B-7789-4083-8518-C7628142B386}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F27A341B-7789-4083-8518-C7628142B386}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9019F2B5-B897-482D-B442-2A48D23BE3E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9019F2B5-B897-482D-B442-2A48D23BE3E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9019F2B5-B897-482D-B442-2A48D23BE3E1}.Release|Any CPU.ActiveCfg = Release|Any CPU

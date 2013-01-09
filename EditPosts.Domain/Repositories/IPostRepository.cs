@@ -12,5 +12,7 @@ namespace EditPosts.Domain.Repositories
         IEnumerable<Post> AllPosts();
         Post Get(int postId);
         void Save(Post post);
+
+        IEnumerable<Post> GetByTagName(string tagName);
     }
 }

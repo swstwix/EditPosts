@@ -10,10 +10,12 @@ namespace EditPosts.PresentationServices.Services.Concret
     public class TagPresentationService : ITagPresentationService
     {
         private readonly ITagRepository tagRepository;
+        private readonly IPostRepository postRepository;
 
-        public TagPresentationService(ITagRepository tagRepository)
+        public TagPresentationService(ITagRepository tagRepository, IPostRepository postRepository)
         {
             this.tagRepository = tagRepository;
+            this.postRepository = postRepository;
         }
 
         #region ITagPresentationService Members
@@ -33,7 +35,7 @@ namespace EditPosts.PresentationServices.Services.Concret
 
         public TagIndexModel LoadTagIndexModel(string name)
         {
-            return new TagIndexModel {Tag = tagRepository.Get(name)};
+            return new TagIndexModel(name, postRepository.GetByTagName(name));
         }
 
         #endregion

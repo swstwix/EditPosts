@@ -53,9 +53,10 @@
     <Compile Include="ViewModels\PostsModels\PostEditViewModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostPreviewModel.cs" />
     <Compile Include="ViewModels\PostsModels\PostIndexModel.cs" />
+    <Compile Include="ViewModels\TagsModels\Item\PostItem.cs" />
     <Compile Include="ViewModels\TagsModels\TagCloudModel.cs" />
     <Compile Include="ViewModels\TagsModels\TagIndexModel.cs" />
-    <Compile Include="ViewModels\TagsModels\TagItem\TagCloudItemModel.cs" />
+    <Compile Include="ViewModels\TagsModels\Item\TagCloudItemModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EditPosts.Domain\EditPosts.Domain.csproj">

@@ -92,7 +92,7 @@ namespace EditPosts.PresentationServices.Services.Concret
             var tagNames = postEditViewModel.Tags.Split(',').Select(s => s.Replace(" ", string.Empty)).Where(s => !string.IsNullOrWhiteSpace(s));
             foreach (string tagName in tagNames)
             {
-                var tag = tagRepository.Get(tagName) ?? new Tag() {Name = tagName, Posts = new HashSet<Post>()};
+                var tag = tagRepository.Get(tagName) ?? new Tag() { Name = tagName };
                 post.Tags.Add(tag);
             }
             postRepository.Save(post);
