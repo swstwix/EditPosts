@@ -22,7 +22,7 @@ namespace EditPosts.PresentationServices.Services.Concret
         {
             return new TagCloudModel (
                                         tagRepository.AllTags().Select
-                                        (t => new TagCloudItemModel(t.Name, t.Posts.Sum(p => p.HitCount)))
+                                        (t => new TagCloudItemModel(t.Name, tagRepository.CountAssignedPostsFor(t.Id)))
                                      );
         }
 

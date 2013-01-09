@@ -37,7 +37,7 @@ namespace EditPosts.Db.Repositories
         public Tag Get(string name)
         {
             // fuck you, nhibernate !!
-            return All().Where(x => x.Name == name).SingleOrDefault();
+            return All().SingleOrDefault(x => x.Name == name);
         }
 
         public IEnumerable<Tag> AllTags() {
@@ -50,6 +50,11 @@ namespace EditPosts.Db.Repositories
         public IEnumerable<string> LoadTagsNamesContails(string term)
         {
             return All().Select(t => t.Name).Where(n => n.Contains(term));
+        }
+
+        public int CountAssignedPostsFor(int tagId)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

@@ -1138,8 +1138,12 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EditPosts.Dapper\EditPosts.Dapper.csproj">
+      <Project>{e928fc00-1aeb-4c49-b160-d1bc40ab63ab}</Project>
+      <Name>EditPosts.Dapper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EditPosts.Db\EditPosts.Db.csproj">
-      <Project>{F27A341B-7789-4083-8518-C7628142B386}</Project>
+      <Project>{f27a341b-7789-4083-8518-c7628142b386}</Project>
       <Name>EditPosts.Db</Name>
     </ProjectReference>
     <ProjectReference Include="..\EditPosts.Domain\EditPosts.Domain.csproj">

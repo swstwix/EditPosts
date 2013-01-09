@@ -11,47 +11,57 @@ using Dapper;
 
 namespace EditPosts.Dapper
 {
-    public class TagRepository : ITagRepository
+    public class TagRepository : ITagRepository, IDisposable
     {
-        private string connectionString;
+        private readonly SqlConnection connection;
 
         public TagRepository(string connectionString)
         {
-            this.connectionString = connectionString;
+            this.connection = new SqlConnection(connectionString);
+            connection.Open();
         }
 
         public string AvailableTags()
         {
             var builder2 = new StringBuilder();
 
-            using (var connection = new SqlConnection(connectionString))
-            {
                 connection.Open();
-                connection.Query<string>("select name from #Tag");
+                connection.Query<string>("select name from #Tags");
                 builder2.AppendFormat("\"{0}\",", "");
-            }
 
             return builder2.ToString();
         }
 
         public void DeleteUnusedTags()
         {
-            throw new NotImplementedException();
+                var unusedTagIds = connection.Query<int>(
+                     "select id from #Tags where not exists (select * from Posts_Tags where Tag_Id = id)");
+                connection.Query("delete from #Tags where id in @unusedTagIds", new {unusedTagIds});
         }
 
         public Tag Get(string name)
         {
-            throw new NotImplementedException();
+           return connection.Query<Tag>("select * from Tags where name = @name", new {name}).Single();
         }
 
         public IEnumerable<Tag> AllTags()
         {
-            throw new NotImplementedException();
+            return connection.Query<Tag>("select * from Tags");
         }
 
         public IEnumerable<string> LoadTagsNamesContails(string term)
         {
-            throw new NotImplementedException();
+            return connection.Query<string>("select name from tags where name likes '%@term%'", new {term});
+        }
+
+        public int CountAssignedPostsFor(int tagId)
+        {
+            return connection.Query<int>("select sum(hitcount) from Posts_Tags join posts on id=post_id where tag_id = @tagId", new { tagId }).Single();
+        }
+
+        public void Dispose()
+        {
+            connection.Close();
         }
     }
 }

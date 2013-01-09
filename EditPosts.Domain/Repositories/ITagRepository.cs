@@ -12,5 +12,6 @@ namespace EditPosts.Domain.Repositories
         IEnumerable<Tag> AllTags();
 
         IEnumerable<string> LoadTagsNamesContails(string term);
+        int CountAssignedPostsFor(int tagId);
     }
 }
