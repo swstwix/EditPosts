@@ -5,8 +5,8 @@ namespace EditPosts.Domain.Repositories
 {
     public interface IPostRepository : IRepository
     {
-        IEnumerable<Post> LatestPosts { get; }
-        IEnumerable<Post> MostPopularPosts { get; }
+        IEnumerable<Post> LatestPosts();
+        IEnumerable<Post> MostPopularPosts();
         void IncHitCount(int postId);
         void Delete(int postId);
         IEnumerable<Post> AllPosts();
@@ -14,5 +14,6 @@ namespace EditPosts.Domain.Repositories
         void Save(Post post);
 
         IEnumerable<Post> GetByTagName(string tagName);
+        Post GetWithTags(int postId);
     }
 }

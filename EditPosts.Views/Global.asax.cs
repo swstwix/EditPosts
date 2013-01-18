@@ -1,12 +1,15 @@
-﻿using System.Web;
+﻿using System.Reflection;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
-using Castle.Windsor;
-using Castle.Windsor.Installer;
+using Autofac;
+using Autofac.Integration.Mvc;
+using EditPosts.Dapper;
+using EditPosts.Domain.Repositories;
 using EditPosts.PresentationServices.Services;
+using EditPosts.PresentationServices.Services.Concret;
 using EditPosts.PresentationServices.ViewModels.PostsModels;
 using EditPosts.Views.Binders;
-using EditPosts.Views.Plumbing;
 
 namespace EditPosts.Views
 {
@@ -15,7 +18,6 @@ namespace EditPosts.Views
 
     public class MvcApplication : HttpApplication
     {
-        private static IWindsorContainer container;
 
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
@@ -34,12 +36,6 @@ namespace EditPosts.Views
                 );
         }
 
-        private static void BootStartupContainer()
-        {
-            container = new WindsorContainer().Install(FromAssembly.This());
-            var controllerFactory = new WindsorControllerFactory(container.Kernel);
-            ControllerBuilder.Current.SetControllerFactory(controllerFactory);
-        }
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -47,13 +43,48 @@ namespace EditPosts.Views
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            BootStartupContainer();
+            BootstrapDependencyResolver();
+
             AddModelBinders();
+        }
+
+        private void BootstrapDependencyResolver()
+        {
+            var builder = new ContainerBuilder();
+
+            var connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Posts"].ConnectionString;
+
+            builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            builder.RegisterFilterProvider();
+            builder.RegisterModule(new AutofacWebTypesModule());
+            builder.RegisterSource(new ViewRegistrationSource());
+            builder.RegisterModelBinders(Assembly.GetExecutingAssembly());
+            builder.RegisterModelBinderProvider();
+            builder.RegisterFilterProvider();
+
+            builder
+                .Register(x => new PostRepository(connectionString))
+                .As<IPostRepository>();
+
+            builder
+                .Register(x => new TagRepository(connectionString))
+                .As<ITagRepository>();
+
+            builder
+                .Register(x => new PostPresentationService(x.Resolve<IPostRepository>(), x.Resolve<ITagRepository>()))
+                .As<IPostPresentationService>();
+
+            builder
+                .Register(x => new TagPresentationService(x.Resolve<ITagRepository>(), x.Resolve<IPostRepository>()))
+                .As<ITagPresentationService>();
+
+            var container = builder.Build();
+            DependencyResolver.SetResolver(new AutofacDependencyResolver(container));
         }
 
         private void AddModelBinders()
         {
-            ModelBinders.Binders.Add(typeof(PostEditViewModel), new PostEditViewModelBinder(container));
+            ModelBinders.Binders.Add(typeof(PostEditViewModel), new PostEditViewModelBinder());
         }
     }
 }

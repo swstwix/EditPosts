@@ -26,7 +26,7 @@ namespace EditPosts.Dapper
             var builder2 = new StringBuilder();
 
                 connection.Open();
-                connection.Query<string>("select name from #Tags");
+                connection.Query<string>("select name from Tags");
                 builder2.AppendFormat("\"{0}\",", "");
 
             return builder2.ToString();
@@ -36,7 +36,7 @@ namespace EditPosts.Dapper
         {
                 var unusedTagIds = connection.Query<int>(
                      "select id from #Tags where not exists (select * from Posts_Tags where Tag_Id = id)");
-                connection.Query("delete from #Tags where id in @unusedTagIds", new {unusedTagIds});
+                connection.Query("delete from Tags where id in @unusedTagIds", new {unusedTagIds});
         }
 
         public Tag Get(string name)
@@ -46,12 +46,12 @@ namespace EditPosts.Dapper
 
         public IEnumerable<Tag> AllTags()
         {
-            return connection.Query<Tag>("select * from Tags");
+            return connection.Query<Tag>("select * from Tags").ToArray();
         }
 
         public IEnumerable<string> LoadTagsNamesContails(string term)
         {
-            return connection.Query<string>("select name from tags where name likes '%@term%'", new {term});
+            return connection.Query<string>("select name from tags where name likes '%@term%'", new { term }).ToArray();
         }
 
         public int CountAssignedPostsFor(int tagId)

@@ -41,7 +41,7 @@ namespace EditPosts.PresentationServices.Services.Concret
         {
             if (isFirstView)
                 postRepository.IncHitCount(postId);
-            Post post = postRepository.Get(postId) ?? new Post
+            Post post = postRepository.GetWithTags(postId) ?? new Post
                                                           {
                                                               PostDate = DateTime.Now,
                                                               HitCount = 0,
@@ -65,7 +65,7 @@ namespace EditPosts.PresentationServices.Services.Concret
         {
             return new PostIndexModel
                        {
-                           LatestPosts = postRepository.LatestPosts
+                           LatestPosts = postRepository.LatestPosts()
                                .Select(p => new PostPreviewModel
                                                 {
                                                     Body = p.Body,
